@@ -20,7 +20,7 @@
   "scripts": {
     "global-bundler": "gem install bundler",
     "global": "npm run global-bundler",
-    "pdf": "grunt pdf",
+    "pdf": "bash ./md2review.sh && grunt pdf",
     "md": "grunt markdown",
     "html": "grunt html",
     "text": "grunt text",
