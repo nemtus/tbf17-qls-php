@@ -4,9 +4,9 @@
 
 == 2.1 使用言語
 
-PHPを使用します。srcフォルダ以下にDocker環境がありますので必要に応じて使用してください。
+PHPを使用します。リポジトリ https://github.com/ishidad2/quick_learning_symbol-for-php のsrcフォルダ以下にDocker環境がありますので必要に応じて使用してください。
 
-=== 混同のDocker環境を使用する場合
+=== リポジトリに同梱のDocker環境を使用する場合
 
 //emlist[][bash]{
 cd src
