@@ -55,7 +55,17 @@ echo $signedPayload['payload'] . PHP_EOL;
 ```
 ###### 出力例
 ```js
-5801000000000000C3D9A9649B042203011BF8D6EFC912562FED813FCAE4A9861D42C9B6C397E00DF54A8634A9AC8AAD06AD882BA4841E60AF8FE9F1D2521110B30B3099B83F630825189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B00000000029841416086000000000000D1B2F5CE0C0000008BD1718CB31EF65217DD6263D65D44F02CCA55DA429EDE4641F4FF0C97ECABBEB000000000000000550000000000000025189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B000000000198544198B4A75DD1ADA8144D60BD8107002C2FEB02DD2EFD5C788E05000000000000005C307478310000005500000000000000A3378BE54307C0A814CDDEB2F9BEC1ACBEA44F298063A16A06B5C4ACE0AD28B4000000000198544198E521BD0F024F58E670A023BF3A14F3BECAF0280396BED005000000000000005C30747832000000
+"5801000000000000C3D9A9649B042203011BF8D6EFC912562FED813FCAE4A986\
+1D42C9B6C397E00DF54A8634A9AC8AAD06AD882BA4841E60AF8FE9F1D2521110\
+B30B3099B83F630825189135BF2307DCBCD1657A34ABC3FDEEC04A126D457287\
+6BCA4F514DB5AC9B00000000029841416086000000000000D1B2F5CE0C000000\
+8BD1718CB31EF65217DD6263D65D44F02CCA55DA429EDE4641F4FF0C97ECABBE\
+B000000000000000550000000000000025189135BF2307DCBCD1657A34ABC3FD\
+EEC04A126D4572876BCA4F514DB5AC9B000000000198544198B4A75DD1ADA814\
+4D60BD8107002C2FEB02DD2EFD5C788E05000000000000005C30747831000000\
+5500000000000000A3378BE54307C0A814CDDEB2F9BEC1ACBEA44F298063A16A\
+06B5C4ACE0AD28B4000000000198544198E521BD0F024F58E670A023BF3A14F3\
+BECAF0280396BED005000000000000005C30747832000000"
 ```
 
 署名を行い、signedHash,signedPayloadを出力します。
@@ -95,8 +105,12 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
                         )
 
                     [message] => \0tx1
-                    [transferTransactionBodyReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:private] => 0
-                    [transferTransactionBodyReserved_2:SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:private] => 0
+                    [transferTransactionBodyReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:
+                        private] => 0
+                    [transferTransactionBodyReserved_2:
+                        SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:
+                        private] => 0
                     [signerPublicKey] => SymbolSdk\Symbol\Models\PublicKey Object
                         (
                             [binaryData] => %�5�#ܼ�ez4�����JmEr�k�OQM���
@@ -113,13 +127,18 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
                             [value] => 16724
                         )
 
-                    [embeddedTransactionHeaderReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransaction:private] => 0
-                    [entityBodyReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransaction:private] => 0
+                    [embeddedTransactionHeaderReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransaction:
+                        private] => 0
+                    [entityBodyReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransaction:
+                        private] => 0
                 )
 
             [1] => SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1 Object
                 (
-                    [recipientAddress] => SymbolSdk\Symbol\Models\UnresolvedAddress Object
+                    [recipientAddress]
+                        => SymbolSdk\Symbol\Models\UnresolvedAddress Object
                         (
                             [binaryData] => ��!�OX�p�#�:���(���
                         )
@@ -129,9 +148,14 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
                         )
 
                     [message] => \0tx2
-                    [transferTransactionBodyReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:private] => 0
-                    [transferTransactionBodyReserved_2:SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:private] => 0
-                    [signerPublicKey] => SymbolSdk\Symbol\Models\PublicKey Object
+                    [transferTransactionBodyReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:
+                        private] => 0
+                    [transferTransactionBodyReserved_2:
+                        SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:
+                        private] => 0
+                    [signerPublicKey]
+                        => SymbolSdk\Symbol\Models\PublicKey Object
                         (
                             [binaryData] => �7��C���޲������O)�c�j�Ĭ�(�
                         )
@@ -147,8 +171,12 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
                             [value] => 16724
                         )
 
-                    [embeddedTransactionHeaderReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransaction:private] => 0
-                    [entityBodyReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransaction:private] => 0
+                    [embeddedTransactionHeaderReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransaction:
+                        private] => 0
+                    [entityBodyReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransaction:
+                        private] => 0
                 )
 
         )
@@ -157,7 +185,9 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
         (
         )
 
-    [aggregateTransactionHeaderReserved_1:SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2:private] => 0
+    [aggregateTransactionHeaderReserved_1:
+        SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2:
+        private] => 0
     [signature] => SymbolSdk\Symbol\Models\Signature Object
         (
             [binaryData] => �����FI�Q�Q��9#�{���k�-��Z�bb�
@@ -192,8 +222,12 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
             [value] => 55012380245
         )
 
-    [verifiableEntityHeaderReserved_1:SymbolSdk\Symbol\Models\Transaction:private] => 0
-    [entityBodyReserved_1:SymbolSdk\Symbol\Models\Transaction:private] => 0
+    [verifiableEntityHeaderReserved_1:
+        SymbolSdk\Symbol\Models\Transaction:
+        private] => 0
+    [entityBodyReserved_1:
+        SymbolSdk\Symbol\Models\Transaction:
+        private] => 0
 )
 ```
 
@@ -243,7 +277,9 @@ try {
   $result = $apiInstance->announceTransaction($signedPayload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 

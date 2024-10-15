@@ -67,7 +67,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 $hash = $facade->hashTransaction($aggregateTx);
 echo "\n===トランザクションハッシュ===" . PHP_EOL;
@@ -79,7 +81,9 @@ echo $hash . PHP_EOL;
 異なるアカウントのメタデータに登録する場合は署名時に signTransactionWithCosignatoriesを使用します。
 
 //emlist[][php]{
-$bobKey = $facade->createAccount(new PrivateKey('ED949592C90CA58A16CB5BEC303DB011A48373063DDB0C4CFD6DFD01Fxxxxxx'));
+$bobKey = $facade->createAccount(new PrivateKey(
+    'ED949592C90CA58A16CB5BEC303DB011A48373063DDB0C4CFD6DFD01Fxxxxxx'
+));
 $targetAddress = $bobKey->address;  // メタデータ記録先アドレス
 $sourceAddress = $aliceKey->address;  // メタデータ作成者アドレス
 
@@ -138,7 +142,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -204,7 +210,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -219,7 +227,9 @@ $targetNamespace = new NamespaceId(IdGenerator::generateNamespaceId("fugafuga"))
 $namespaceApiInstance = new NamespaceRoutesApi($client, $config);
 $namespaceInfo = $namespaceApiInstance->getNamespace(substr($targetNamespace, 2));
 
-$sourceAddress = new UnresolvedAddress($namespaceInfo['namespace']['owner_address']); // ネームスペース作成者アドレス
+$sourceAddress = new UnresolvedAddress(
+    $namespaceInfo['namespace']['owner_address']
+); // ネームスペース作成者アドレス
 
 $keyId = Metadata::metadataGenerateKey("key_namespace");
 $newValue = 'test';
@@ -271,7 +281,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -293,77 +305,82 @@ echo $metadataInfo;
 
 //emlist{
 {
-    "data": [
-        {
-            "id": "66A1127884E82060AFC1D36F",
-            "metadataEntry": {
-                "version": 1,
-                "compositeHash": "376909753F88E724C42E0313C3F98F44E3BDA949827E49889AB75125E180DD5B",
-                "sourceAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                "targetAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                "scopedMetadataKey": "7FFFFFFFFFFFFFFF",
-                "targetId": {},
-                "metadataType": 0,
-                "value": "74657374"
-            }
-        },
-        {
-            "id": "66A120C284E82060AFC1E5AE",
-            "metadataEntry": {
-                "version": 1,
-                "compositeHash": "77B448E5375D16F44FF3C2E35221759B35438D360BD89DB0679003FFD1E7D9F5",
-                "sourceAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                "targetAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                "scopedMetadataKey": "8EF1ED391DB8F32F",
-                "targetId": {},
-                "metadataType": 0,
-                "value": "686F6765"
-            }
-        },
-        {
-            "id": "66A1720784E82060AFC260B5",
-            "metadataEntry": {
-                "version": 1,
-                "compositeHash": "D686E984A60295C57F7D7A350CD2B51A3A55CD67BF4F302DE0E22A39D4E9F9A0",
-                "sourceAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                "targetAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                "scopedMetadataKey": "D95FCE92728FA600",
-                "targetId": {},
-                "metadataType": 0,
-                "value": "686F6765"
-            }
-        },
-        {
-            "id": "66A23EE184E82060AFC38CE6",
-            "metadataEntry": {
-                "version": 1,
-                "compositeHash": "DA221A3B4D09C0C1833A7176E73D3CD2C23B2B4A37A3D124399FC9D104D9EC97",
-                "sourceAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                "targetAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                "scopedMetadataKey": "CF217E116AA422E2",
-                "targetId": {},
-                "metadataType": 1,
-                "value": "74657374"
-            }
-        },
-        {
-            "id": "66A242D384E82060AFC392DD",
-            "metadataEntry": {
-                "version": 1,
-                "compositeHash": "BB4A767B68E32FE66319BB4DEF98FF23EF1AEE22863DE3E59C04A03F37E9DB7F",
-                "sourceAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                "targetAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                "scopedMetadataKey": "8B6A8A370873D0D9",
-                "targetId": {},
-                "metadataType": 2,
-                "value": "74657374"
-            }
-        }
-    ],
-    "pagination": {
-        "pageNumber": 1,
-        "pageSize": 10
+  "data": [
+    {
+      "id": "66A1127884E82060AFC1D36F",
+      "metadataEntry": {
+        "version": 1,
+        "compositeHash": 
+          "376909753F88E724C42E0313C3F98F44E3BDA949827E49889AB75125E180DD5B",
+        "sourceAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+        "targetAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+        "scopedMetadataKey": "7FFFFFFFFFFFFFFF",
+        "targetId": {},
+        "metadataType": 0,
+        "value": "74657374"
+      }
+    },
+    {
+      "id": "66A120C284E82060AFC1E5AE",
+      "metadataEntry": {
+        "version": 1,
+        "compositeHash": 
+          "77B448E5375D16F44FF3C2E35221759B35438D360BD89DB0679003FFD1E7D9F5",
+        "sourceAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+        "targetAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+        "scopedMetadataKey": "8EF1ED391DB8F32F",
+        "targetId": {},
+        "metadataType": 0,
+        "value": "686F6765"
+      }
+    },
+    {
+      "id": "66A1720784E82060AFC260B5",
+      "metadataEntry": {
+        "version": 1,
+        "compositeHash": 
+          "D686E984A60295C57F7D7A350CD2B51A3A55CD67BF4F302DE0E22A39D4E9F9A0",
+        "sourceAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+        "targetAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+        "scopedMetadataKey": "D95FCE92728FA600",
+        "targetId": {},
+        "metadataType": 0,
+        "value": "686F6765"
+      }
+    },
+    {
+      "id": "66A23EE184E82060AFC38CE6",
+      "metadataEntry": {
+        "version": 1,
+        "compositeHash": 
+          "DA221A3B4D09C0C1833A7176E73D3CD2C23B2B4A37A3D124399FC9D104D9EC97",
+        "sourceAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+        "targetAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+        "scopedMetadataKey": "CF217E116AA422E2",
+        "targetId": {},
+        "metadataType": 1,
+        "value": "74657374"
+      }
+    },
+    {
+      "id": "66A242D384E82060AFC392DD",
+      "metadataEntry": {
+        "version": 1,
+        "compositeHash": 
+          "BB4A767B68E32FE66319BB4DEF98FF23EF1AEE22863DE3E59C04A03F37E9DB7F",
+        "sourceAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+        "targetAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+        "scopedMetadataKey": "8B6A8A370873D0D9",
+        "targetId": {},
+        "metadataType": 2,
+        "value": "74657374"
+      }
     }
+  ],
+  "pagination": {
+    "pageNumber": 1,
+    "pageSize": 10
+  }
 }
 //}
 

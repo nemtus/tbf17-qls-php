@@ -9,7 +9,11 @@ Symbolブロックチェーンにはハッシュロックとシークレット�
 === アグリゲートボンデッドトランザクションの作成
 
 //emlist[][php]{
-$bobKey = $facade->createAccount(new PrivateKey("ED949592C90CA58A16CB5BEC303DB011A48373063DDB0C4CFD6DFD01F********"));
+$bobKey = $facade->createAccount(
+    new PrivateKey(
+        "ED949592C90CA58A16CB5BEC303DB011A48373063DDB0C4CFD6DFD01F********"
+    )
+);
 $bobAddress = $bobKey->address;
 
 $namespaceIds = IdGenerator::generateNamespacePath('symbol.xym');
@@ -111,7 +115,9 @@ try {
   $result = $apiInstance->announceTransaction($hashLockJsonPayload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -124,7 +130,9 @@ try {
   $result = $apiInstance->announcePartialTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 
 //}
@@ -134,10 +142,14 @@ try {
 ロックされたトランザクションを指定されたアカウント(Bob)で連署します。
 
 //emlist[][php]{
-$txInfo = $apiInstance->getPartialTransaction($facade->hashTransaction($aggregateTx));
+$txInfo = $apiInstance->getPartialTransaction(
+    $facade->hashTransaction($aggregateTx)
+);
 
 // 連署者の連署
-$txInfo = $apiInstance->getPartialTransaction($facade->hashTransaction($aggregateTx));
+$txInfo = $apiInstance->getPartialTransaction(
+    $facade->hashTransaction($aggregateTx)
+);
 
 // // 連署者の連署
 $signTxHash = new Hash256($txInfo->getMeta()->getHash());
@@ -156,7 +168,9 @@ try {
   $result = $apiInstance->announceCosignatureTransaction($body);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -232,7 +246,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -255,27 +271,29 @@ $resutl = $secretAipInstance->searchSecretLock(secret: $secret);
 
 //emlist{
 {
-    "data": [
-        {
-            "id": "66A4247084E82060AFC6705C",
-            "lock": {
-                "version": 1,
-                "ownerAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                "mosaicId": "72C0212E67A08BCE",
-                "amount": "1000000",
-                "endHeight": "1607702",
-                "status": 0,
-                "hashAlgorithm": 0,
-                "secret": "A8E4F52ADDA0AFCD413D86A51589711CF045F144EEE56FC9CE96095D6AB79E9E",
-                "recipientAddress": "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26",
-                "compositeHash": "57541680B0E2DFAE504A6937AAB6A65A7008C25F905FCA68A24C21165314023C"
-            }
-        }
-    ],
-    "pagination": {
-        "pageNumber": 1,
-        "pageSize": 10
+  "data": [
+    {
+      "id": "66A4247084E82060AFC6705C",
+      "lock": {
+        "version": 1,
+        "ownerAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+        "mosaicId": "72C0212E67A08BCE",
+        "amount": "1000000",
+        "endHeight": "1607702",
+        "status": 0,
+        "hashAlgorithm": 0,
+        "secret": 
+          "A8E4F52ADDA0AFCD413D86A51589711CF045F144EEE56FC9CE96095D6AB79E9E",
+        "recipientAddress": "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26",
+        "compositeHash": 
+          "57541680B0E2DFAE504A6937AAB6A65A7008C25F905FCA68A24C21165314023C"
+      }
     }
+  ],
+  "pagination": {
+    "pageNumber": 1,
+    "pageSize": 10
+  }
 }
 //}
 
@@ -305,14 +323,18 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
 承認結果を確認します。
 
 //emlist[][js]{
-$txInfo = $apiInstance->getConfirmedTransaction($facade->hashTransaction($proofTx));
+$txInfo = $apiInstance->getConfirmedTransaction(
+    $facade->hashTransaction($proofTx)
+);
 echo $txInfo;
 //}
 
@@ -320,29 +342,35 @@ echo $txInfo;
 
 //emlist{
 {
-    "id": "66A429D1527B051AC20AE9B3",
-    "meta": {
-        "height": "1607263",
-        "hash": "91387B92117ACE7A6BB5596720DAEC6FEA89E42076BD40320381CE1A86C0D57D",
-        "merkleComponentHash": "91387B92117ACE7A6BB5596720DAEC6FEA89E42076BD40320381CE1A86C0D57D",
-        "index": 1,
-        "timestamp": "54784174665",
-        "feeMultiplier": 100
-    },
-    "transaction": {
-        "size": 207,
-        "signature": "52CFCE339A361AED998B12EC7B4976542F5F413694BD6E9395DB37C980977839FE2ABEBF577C78CFCA065F0E9C2D72228859B830B75FEBC64551396FAE1D7B00",
-        "signerPublicKey": "D47E477DA7CAE6127779523270F91BD000D7D0E06DA56192FE911460DC39081C",
-        "version": 1,
-        "network": 152,
-        "type": 16978,
-        "maxFee": "20700",
-        "deadline": "54791351985",
-        "recipientAddress": "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26",
-        "secret": "2F63B181A3C0A9C549F13492D9A8A3D6851B911F813A4C4D70539A0BE55D277D",
-        "hashAlgorithm": 0,
-        "proof": "86D75E3321D5EE227E14C3CFD67E378EB3F3FD64"
-    }
+  "id": "66A429D1527B051AC20AE9B3",
+  "meta": {
+    "height": "1607263",
+    "hash": 
+      "91387B92117ACE7A6BB5596720DAEC6FEA89E42076BD40320381CE1A86C0D57D",
+    "merkleComponentHash": 
+      "91387B92117ACE7A6BB5596720DAEC6FEA89E42076BD40320381CE1A86C0D57D",
+    "index": 1,
+    "timestamp": "54784174665",
+    "feeMultiplier": 100
+  },
+  "transaction": {
+    "size": 207,
+    "signature": 
+      "52CFCE339A361AED998B12EC7B4976542F5F413694BD6E9395DB37C980977839\
+        FE2ABEBF577C78CFCA065F0E9C2D72228859B830B75FEBC64551396FAE1D7B00",
+    "signerPublicKey": 
+      "D47E477DA7CAE6127779523270F91BD000D7D0E06DA56192FE911460DC39081C",
+    "version": 1,
+    "network": 152,
+    "type": 16978,
+    "maxFee": "20700",
+    "deadline": "54791351985",
+    "recipientAddress": "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26",
+    "secret": 
+      "2F63B181A3C0A9C549F13492D9A8A3D6851B911F813A4C4D70539A0BE55D277D",
+    "hashAlgorithm": 0,
+    "proof": "86D75E3321D5EE227E14C3CFD67E378EB3F3FD64"
+  }
 }
 //}
 
@@ -362,129 +390,151 @@ echo $result . PHP_EOL;
 
 //emlist{
 {
-    "data": [
-        {
-            "id": "66A428AC527B051AC20AE98E",
-            "meta": {
-                "timestamp": "54783880862"
-            },
-            "statement": {
-                "height": "1607253",
-                "source": {
-                    "primaryId": 2,
-                    "secondaryId": 0
-                },
-                "receipts": [
-                    {
-                        "version": 1,
-                        "type": 8786,
-                        "mosaicId": "72C0212E67A08BCE",
-                        "amount": "1000000",
-                        "targetAddress": "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26"
-                    }
-                ]
-            }
+  "data": [
+    {
+      "id": "66A428AC527B051AC20AE98E",
+      "meta": {
+        "timestamp": "54783880862"
+      },
+      "statement": {
+        "height": "1607253",
+        "source": {
+          "primaryId": 2,
+          "secondaryId": 0
         },
-        {
-            "id": "66A428D2527B051AC20AE996",
-            "meta": {
-                "timestamp": "54783918766"
-            },
-            "statement": {
-                "height": "1607254",
-                "source": {
-                    "primaryId": 2,
-                    "secondaryId": 0
-                },
-                "receipts": [
-                    {
-                        "version": 1,
-                        "type": 8786,
-                        "mosaicId": "72C0212E67A08BCE",
-                        "amount": "1000000",
-                        "targetAddress": "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26"
-                    }
-                ]
-            }
+        "receipts": [
+          {
+            "version": 1,
+            "type": 8786,
+            "mosaicId": "72C0212E67A08BCE",
+            "amount": "1000000",
+            "targetAddress": 
+              "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26"
+          }
+        ]
+      }
+    },
+    {
+      "id": "66A428D2527B051AC20AE996",
+      "meta": {
+        "timestamp": "54783918766"
+      },
+      "statement": {
+        "height": "1607254",
+        "source": {
+          "primaryId": 2,
+          "secondaryId": 0
         },
-        {
-            "id": "66A42992527B051AC20AE9AC",
-            "meta": {
-                "timestamp": "54784111700"
-            },
-            "statement": {
-                "height": "1607261",
-                "source": {
-                    "primaryId": 2,
-                    "secondaryId": 0
-                },
-                "receipts": [
-                    {
-                        "version": 1,
-                        "type": 8786,
-                        "mosaicId": "72C0212E67A08BCE",
-                        "amount": "1000000",
-                        "targetAddress": "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26"
-                    }
-                ]
-            }
+        "receipts": [
+          {
+            "version": 1,
+            "type": 8786,
+            "mosaicId": "72C0212E67A08BCE",
+            "amount": "1000000",
+            "targetAddress": 
+              "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26"
+          }
+        ]
+      }
+    },
+    {
+      "id": "66A42992527B051AC20AE9AC",
+      "meta": {
+        "timestamp": "54784111700"
+      },
+      "statement": {
+        "height": "1607261",
+        "source": {
+          "primaryId": 2,
+          "secondaryId": 0
         },
-        {
-            "id": "66A429D1527B051AC20AE9B7",
-            "meta": {
-                "timestamp": "54784174665"
-            },
-            "statement": {
-                "height": "1607263",
-                "source": {
-                    "primaryId": 2,
-                    "secondaryId": 0
-                },
-                "receipts": [
-                    {
-                        "version": 1,
-                        "type": 8786,
-                        "mosaicId": "72C0212E67A08BCE",
-                        "amount": "1000000",
-                        "targetAddress": "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26"
-                    }
-                ]
-            }
+        "receipts": [
+          {
+            "version": 1,
+            "type": 8786,
+            "mosaicId": "72C0212E67A08BCE",
+            "amount": "1000000",
+            "targetAddress": 
+              "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26"
+          }
+        ]
+      }
+    },
+    {
+      "id": "66A429D1527B051AC20AE9B7",
+      "meta": {
+        "timestamp": "54784174665"
+      },
+      "statement": {
+        "height": "1607263",
+        "source": {
+          "primaryId": 2,
+          "secondaryId": 0
         },
-        {
-            "id": "66A42B8F527B051AC20AE9D6",
-            "meta": {
-                "timestamp": "54784619386"
-            },
-            "statement": {
-                "height": "1607275",
-                "source": {
-                    "primaryId": 2,
-                    "secondaryId": 0
-                },
-                "receipts": [
-                    {
-                        "version": 1,
-                        "type": 8786,
-                        "mosaicId": "72C0212E67A08BCE",
-                        "amount": "1000000",
-                        "targetAddress": "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26"
-                    }
-                ]
-            }
-        }
-    ],
-    "pagination": {
-        "pageNumber": 1,
-        "pageSize": 10
+        "receipts": [
+          {
+            "version": 1,
+            "type": 8786,
+            "mosaicId": "72C0212E67A08BCE",
+            "amount": "1000000",
+            "targetAddress": 
+              "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26"
+          }
+        ]
+      }
+    },
+    {
+      "id": "66A42B8F527B051AC20AE9D6",
+      "meta": {
+        "timestamp": "54784619386"
+      },
+      "statement": {
+        "height": "1607275",
+        "source": {
+          "primaryId": 2,
+          "secondaryId": 0
+        },
+        "receipts": [
+          {
+            "version": 1,
+            "type": 8786,
+            "mosaicId": "72C0212E67A08BCE",
+            "amount": "1000000",
+            "targetAddress": 
+              "98665DDAC8CCF6EE40B1D50800DC8C6C27B314988A1FDB26"
+          }
+        ]
+      }
     }
+  ],
+  "pagination": {
+    "pageNumber": 1,
+    "pageSize": 10
+  }
 }
 //}
 
 ReceiptTypeは以下の通りです。
 
 //emlist[][js]{
-{4685: 'Mosaic_Rental_Fee', 4942: 'Namespace_Rental_Fee', 8515: 'Harvest_Fee', 8776: 'LockHash_Completed', 8786: 'LockSecret_Completed', 9032: 'LockHash_Expired', 9042: 'LockSecret_Expired', 12616: 'LockHash_Created', 12626: 'LockSecret_Created', 16717: 'Mosaic_Expired', 16718: 'Namespace_Expired', 16974: 'Namespace_Deleted', 20803: 'Inflation', 57667: 'Transaction_Group', 61763: 'Address_Alias_Resolution', 62019: 'Mosaic_Alias_Resolution'}
+{
+  4685: 'Mosaic_Rental_Fee',
+  4942: 'Namespace_Rental_Fee',
+  8515: 'Harvest_Fee',
+  8776: 'LockHash_Completed',
+  8786: 'LockSecret_Completed',
+  9032: 'LockHash_Expired',
+  9042: 'LockSecret_Expired',
+  12616: 'LockHash_Created',
+  12626: 'LockSecret_Created',
+  16717: 'Mosaic_Expired',
+  16718: 'Namespace_Expired',
+  16974: 'Namespace_Deleted',
+  20803: 'Inflation',
+  57667: 'Transaction_Group',
+  61763: 'Address_Alias_Resolution',
+  62019: 'Mosaic_Alias_Resolution'
+}
 
 8786: 'LockSecret_Completed' :ロック解除完了
 9042: 'LockSecret_Expired'　：ロック期限切れ

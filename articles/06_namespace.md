@@ -16,7 +16,8 @@ $config->setHost($NODE_URL);
 $client = new GuzzleHttp\Client();
 
 $networkApiInstance = new NetworkRoutesApi($client, $config);
-$rootNsperBlock = $networkApiInstance->getRentalFees()->getEffectiveRootNamespaceRentalFeePerBlock();
+$rootNsperBlock = $networkApiInstance->getRentalFees()
+    ->getEffectiveRootNamespaceRentalFeePerBlock();
 $rentalDays = 365;
 $rentalBlock = ($rentalDays * 24 * 60 * 60) / 30;
 $rootNsRenatalFeeTotal = $rentalBlock * $rootNsperBlock;
@@ -35,7 +36,8 @@ Root Namespace Rental Fee: 210240000 //約210XYM
 サブネームスペースの取得手数料を計算します。
 
 ```php
-$childNamespaceRentalFee = $networkApiInstance->getRentalFees()->getEffectiveChildNamespaceRentalFee();
+$childNamespaceRentalFee = $networkApiInstance->getRentalFees()
+    ->getEffectiveChildNamespaceRentalFee();
 echo "Child Namespace Rental Fee: " . $childNamespaceRentalFee . PHP_EOL;
 ```
 ###### 出力例
@@ -73,7 +75,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 
@@ -90,7 +94,9 @@ $tx = new NamespaceRegistrationTransactionV1(
   duration: new BlockDuration(86400), // 有効期限
   parentId: new NamespaceId($parnetNameId),
   id: new NamespaceId(IdGenerator::generateNamespaceId($name, $parnetNameId)),
-  registrationType: new NamespaceRegistrationType(NamespaceRegistrationType::CHILD),
+  registrationType: new NamespaceRegistrationType(
+    NamespaceRegistrationType::CHILD
+  ),
   name: $name,
 );
 $facade->setMaxFee($tx, 200);
@@ -111,7 +117,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 
@@ -142,7 +150,9 @@ try {
   $nsInfo = $namespaceApiInstance->getNamespace(substr($namespaceId, 2));
   // echo $nsInfo['namespace']. PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 
 $chainApiInstance = new ChainRoutesApi($client, $config);
@@ -150,7 +160,9 @@ try {
   $chainInfo = $chainApiInstance->getChainInfo(substr($namespaceId, 2));
   // echo $chainInfo . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 $lastHeight = (int)$chainInfo['height'];
 
@@ -159,11 +171,14 @@ try {
   $lastBlock = $blockApiInstance->getBlockByHeight($lastHeight);
   // echo $lastBlock . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 $remainHeight = (int)$nsInfo['namespace']['end_height'] - $lastHeight;
 
-$endDate = Carbon::createFromTimestampMs((int)$lastBlock['block']['timestamp'] + $remainHeight * 30000 + $epochAdjustment * 1000);
+$endDate = Carbon::createFromTimestampMs((int)$lastBlock['block']['timestamp'] +
+    $remainHeight * 30000 + $epochAdjustment * 1000);
 echo "End Date: " . $endDate . PHP_EOL;
 ```
 
@@ -202,7 +217,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 リンク先のアドレスは自分が所有していなくても問題ありません。
@@ -234,7 +251,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 
@@ -251,7 +270,10 @@ v3 ではネームスペースを直接指定できないため、アドレス�
 
 // UnresolvedAccount 導出
 $namespaceId = IdGenerator::generateNamespaceId("xembook"); // ルートネームスペース
-$address = Address::fromNamespaceId(new NamespaceId($namespaceId), $facade->network->identifier);
+$address = Address::fromNamespaceId(
+    new NamespaceId($namespaceId),
+    $facade->network->identifier
+);
 
 // Tx作成
 $tx = new TransferTransactionV1(
@@ -273,7 +295,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 
 ```
@@ -307,7 +331,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 
@@ -543,7 +569,8 @@ echo $state;
                             "primaryId": 1,
                             "secondaryId": 0
                         },
-                        "resolved": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0"
+                        "resolved": "98E521BD0F024F58E670A023BF3A14F3\
+                                      BECAF0280396BED0"
                     }
                 ]
             }

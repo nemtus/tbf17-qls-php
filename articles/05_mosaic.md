@@ -46,7 +46,10 @@ MosaicFlagsは以下の通りです。
 
 ```js
 MosaicFlags {
-  supplyMutable: false, transferable: false, restrictable: false, revokable: false
+  supplyMutable: false,
+  transferable: false,
+  restrictable: false,
+  revokable: false
 }
 ```
 数量変更、第三者への譲渡、モザイクグローバル制限の適用、発行者からの還収の可否について指定します。
@@ -122,7 +125,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 
@@ -223,7 +228,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 
 ```
@@ -291,9 +298,11 @@ object(SymbolRestClient\Model\TransactionInfoDTO)#127 (2) {
         ["size"]=>
         int(211)
         ["signature"]=>
-        string(128) "6467909E4563D3BDF83400FD955D0F5CCE3CAAC7E9D9CB35037CDF4DE4BE2857CEAB9ED120BB38882076B8DC13E9F11E270A05821663B71D38E1696A5CA60C06"
+        string(128) "6467909E4563D3BDF83400FD955D0F5CCE3CAAC7E9D9CB35037CDF4DE4BE2857\
+                    CEAB9ED120BB38882076B8DC13E9F11E270A05821663B71D38E1696A5CA60C06"
         ["signer_public_key"]=>
-        string(64) "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B"
+        string(64) "25189135BF2307DCBCD1657A34ABC3FD\
+                    EEC04A126D4572876BCA4F514DB5AC9B"
         ["version"]=>
         int(1)
         ["network"]=>
@@ -518,7 +527,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 ※AggregateTransaction の Inner Transaction クラスは全て Embedded がつくので EmbeddedTransferTransactionV1 を使用します。
@@ -557,7 +568,9 @@ $revocationTx = new MosaicSupplyRevocationTransactionV1(
     mosaicId: new UnresolvedMosaicId("0x12679808DC2A1493"),  //5.1で作成したモザイクID
     amount: new Amount(100) //過分性が2のため、100を指定することで送信量が1モザイクとなる
   ),
-  sourceAddress: new UnresolvedAddress("TDZ46RYMP6XTRQLOGI3AWULOHV56LBUE7M43MCI"), //回収ターゲット
+  sourceAddress: new UnresolvedAddress(
+    "TDZ46RYMP6XTRQLOGI3AWULOHV56LBUE7M43MCI"
+  ), //回収ターゲット
 );
 $facade->setMaxFee($revocationTx, 100); // 手数料
 

@@ -97,9 +97,11 @@ object(SymbolSdk\Symbol\Models\TransferTransactionV1)#71 (14) {
   }
   ["message"]=>
   string(15) "hello, symbol!"
-  ["transferTransactionBodyReserved_1":"SymbolSdk\Symbol\Models\TransferTransactionV1":private]=>
+  ["transferTransactionBodyReserved_1":
+    "SymbolSdk\Symbol\Models\TransferTransactionV1":private]=>
   int(0)
-  ["transferTransactionBodyReserved_2":"SymbolSdk\Symbol\Models\TransferTransactionV1":private]=>
+  ["transferTransactionBodyReserved_2":
+    "SymbolSdk\Symbol\Models\TransferTransactionV1":private]=>
   int(0)
   ["signature"]=>
   object(SymbolSdk\Symbol\Models\Signature)#80 (1) {
@@ -137,9 +139,11 @@ object(SymbolSdk\Symbol\Models\TransferTransactionV1)#71 (14) {
     ["value"]=>
     int(54392061979)
   }
-  ["verifiableEntityHeaderReserved_1":"SymbolSdk\Symbol\Models\Transaction":private]=>
+  ["verifiableEntityHeaderReserved_1":
+    "SymbolSdk\Symbol\Models\Transaction":private]=>
   int(0)
-  ["entityBodyReserved_1":"SymbolSdk\Symbol\Models\Transaction":private]=>
+  ["entityBodyReserved_1":
+    "SymbolSdk\Symbol\Models\Transaction":private]=>
   int(0)
 }
 ```
@@ -206,7 +210,12 @@ var_dump($payload);
 ```
 array(1) {
   ["payload"]=>
-  string(382) "BF0000000000000071B2D3DA6B83E6904DEB1EE5AE259D6F51B71E742B3F4D5B9EC394BADC844A1574F9418F0349D825AAD836100F39F0AB87EC0BF19BE8E21B1AB94D0AC11B780625189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B00000000019854419C4A0000000000000CB455A40C00000098D02DDEA92E7186B5321831A58554E7B6EB58454B08161E0F00010000000000CE8BA0672E21C07240420F00000000000068656C6C6F2C2073796D626F6C21"
+  string(382) "BF0000000000000071B2D3DA6B83E6904DEB1EE5AE259D6F51B71E742B3F4D5B"
+  ."9EC394BADC844A1574F9418F0349D825AAD836100F39F0AB87EC0BF19BE8E21B1AB94D0AC11B7"
+  ."80625189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B0000000001"
+  ."9854419C4A0000000000000CB455A40C00000098D02DDEA92E7186B5321831A58554E7B6EB584"
+  ."54B08161E0F00010000000000CE8BA0672E21C07240420F00000000000068656C6C6F2C207379"
+  ."6D626F6C21"
 }
 ```
 
@@ -221,7 +230,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: '
+    . $e->getMessage()
+    . PHP_EOL;
 }
 ```
 
@@ -240,7 +251,12 @@ Symbolではノードの応答速度を極限に高めるため、トランザ�
 
 ##### アナウンスに失敗した場合の応答例
 ```
-Uncaught Error: {"statusCode":409,"statusMessage":"Unknown Error","body":"{\"code\":\"InvalidArgument\",\"message\":\"payload has an invalid format\"}"}
+Uncaught Error: {
+  "statusCode":409,
+  "statusMessage":"Unknown Error",
+  "body":
+    "{\"code\":\"InvalidArgument\",\"message\":\"payload has an invalid format\"}"
+}
 ```
 
 ## 4.4 確認
@@ -258,7 +274,9 @@ try {
   $txStatus = $txStatusApi->getTransactionStatus($hash);
   var_dump($txStatus);
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 ###### 出力例
@@ -311,7 +329,12 @@ object(SymbolRestClient\Model\TransactionStatusDTO)#111 (2) {
 以下のようにResourceNotFoundエラーが発生した場合はトランザクションが受理されていません。
 ```
 response:
-{"code":"ResourceNotFound","message":"no resource exists with id '066A063559C2D4EF2EA3222A9BA46193520915DE24EA4B3E601910 (truncated...)
+{
+  "code":"ResourceNotFound",
+  "message":"no resource exists with id" 
+    . "'066A063559C2D4EF2EA3222A9BA46193520915DE24EA4B3E601910" 
+    . "(truncated...)",
+}
 ```
 
 考えられる可能性としては、トランザクションで指定した最大手数料が、ノードで設定された最低手数料に満たない場合や、
@@ -333,9 +356,9 @@ echo $hash . PHP_EOL;
 ```
 
 - メインネット　
-  - https://symbol.fyi/transactions/BAD83010F0A707A8ED0AF9D5BFDDBF8226878F6921CE75C7E75BBE50F869870B
+  - [https://symbol.fyi/transactions/](https://symbol.fyi/transactions/BAD83010F0A707A8ED0AF9D5BFDDBF8226878F6921CE75C7E75BBE50F869870B)<br />BAD83010F0A707A8ED0AF9D5BFDDBF8226878F6921CE75C7E75BBE50F869870B
 - テストネット　
-  - https://testnet.symbol.fyi/transactions/BAD83010F0A707A8ED0AF9D5BFDDBF8226878F6921CE75C7E75BBE50F869870B
+  - [https://testnet.symbol.fyi/transactions/](https://testnet.symbol.fyi/transactions/BAD83010F0A707A8ED0AF9D5BFDDBF8226878F6921CE75C7E75BBE50F869870B)<br />BAD83010F0A707A8ED0AF9D5BFDDBF8226878F6921CE75C7E75BBE50F869870B
 
 #### SDKで確認
 
@@ -344,7 +367,9 @@ try {
   $result = $apiInstance->getConfirmedTransaction($hash);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 ###### 出力例
@@ -354,15 +379,19 @@ try {
     "meta": {
         "height": "1593561",
         "hash": "7F6E7537D731307CCB6F9DDF62E737326071038851939623FF1AB56C83D2FBDF",
-        "merkleComponentHash": "7F6E7537D731307CCB6F9DDF62E737326071038851939623FF1AB56C83D2FBDF",
+        "merkleComponentHash": 
+            "7F6E7537D731307CCB6F9DDF62E737326071038851939623FF1AB56C83D2FBDF",
         "index": 0,
         "timestamp": "54293190821",
         "feeMultiplier": 100
     },
     "transaction": {
         "size": 191,
-        "signature": "08BEC8BC4B00733F6E029F92F2B2A736BFAFD748D818BEB98DFCF9FAC36AC6823A6A53A4F16FF1B6A49B0ECAA99FD31B0BD460A876EAD0C1A5D1990356A65105",
-        "signerPublicKey": "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B",
+        "signature": 
+            "08BEC8BC4B00733F6E029F92F2B2A736BFAFD748D818BEB98DFCF9FAC36AC682"
+            . "3A6A53A4F16FF1B6A49B0ECAA99FD31B0BD460A876EAD0C1A5D1990356A65105",
+        "signerPublicKey":
+            "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B",
         "version": 1,
         "network": 152,
         "type": 16724,
@@ -401,7 +430,9 @@ try {
   echo "\n===ステータスの確認===" . PHP_EOL;
   var_dump($txStatus);
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 
 sleep(1);
@@ -413,7 +444,9 @@ try {
   echo "\n===承認確認===" . PHP_EOL;
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 
@@ -429,7 +462,9 @@ try {
   echo "\n===トランザクション履歴===" . PHP_EOL;
   var_dump($result);
 } catch (\Throwable $th) {
-  echo 'Exception when calling TransactionRoutesApi->searchConfirmedTransactions: ', $th->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->searchConfirmedTransactions: ', 
+    . $th->getMessage(),
+    . PHP_EOL;
 }
 ```
 ※ IDEなどを使うと`embedded`はbool型を期待するのでwarningが表示されるかもしれませんが、ここでは文字列の`true`を渡します。
@@ -442,22 +477,33 @@ try {
             "id": "669C9D0B527B051AC20A61DF",
             "meta": {
                 "height": "1593459",
-                "hash": "5FDA8DB2C16B4C0C3F6C22E6856B2A8CFAC5001020F7ED3151069D879A0BE29D",
-                "merkleComponentHash": "5FDA8DB2C16B4C0C3F6C22E6856B2A8CFAC5001020F7ED3151069D879A0BE29D",
+                "hash": 
+                    "5FDA8DB2C16B4C0C3F6C22E6856B2A8\
+                      CFAC5001020F7ED3151069D879A0BE29D",
+                "merkleComponentHash": 
+                    "5FDA8DB2C16B4C0C3F6C22E6856B2A8\
+                      CFAC5001020F7ED3151069D879A0BE29D",
                 "index": 0,
                 "timestamp": "54289384247",
                 "feeMultiplier": 534
             },
             "transaction": {
                 "size": 187,
-                "signature": "E9E4E49235FC46D892B77DDC37CB42D827556860D1C609DEF171A4EC698C85744FBD579641E0765CA6B2D9E4E12DCEFF9E6C9473CF5948CFC17BA7A566444F0A",
-                "signerPublicKey": "81EA7C15E7EC06261C9F654F54EAC4748CFCF00E09A8FE47779ACD14A7602004",
+                "signature": 
+                    "E9E4E49235FC46D892B77DDC37CB42D8\
+                      27556860D1C609DEF171A4EC698C8574\
+                      4FBD579641E0765CA6B2D9E4E12DCEFF\
+                      9E6C9473CF5948CFC17BA7A566444F0A",
+                "signerPublicKey": 
+                    "81EA7C15E7EC06261C9F654F54EAC474\
+                      8CFCF00E09A8FE47779ACD14A7602004",
                 "version": 1,
                 "network": 152,
                 "type": 16724,
                 "maxFee": "100000",
                 "deadline": "54296567552",
-                "recipientAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+                "recipientAddress":
+                    "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
                 "mosaics": [
                     {
                         "id": "72C0212E67A08BCE",
@@ -471,22 +517,33 @@ try {
             "id": "669C9D31527B051AC20A61E3",
             "meta": {
                 "height": "1593460",
-                "hash": "A39F0A79CD87D4247B00C2397875803AD2103542B6B3C7F485F80A4A4D613746",
-                "merkleComponentHash": "A39F0A79CD87D4247B00C2397875803AD2103542B6B3C7F485F80A4A4D613746",
+                "hash": 
+                    "A39F0A79CD87D4247B00C2397875803A\
+                      D2103542B6B3C7F485F80A4A4D613746",
+                "merkleComponentHash": 
+                    "A39F0A79CD87D4247B00C2397875803A\
+                      D2103542B6B3C7F485F80A4A4D613746",
                 "index": 0,
                 "timestamp": "54289422373",
                 "feeMultiplier": 100
             },
             "transaction": {
                 "size": 191,
-                "signature": "3F989538EEEBA80AB3394475B8BA93B40B75277B4D12D9003998E20CFBE66721E38B606184A5DA704257B8D766FAEE283901EB0A3945B97C8D18AFB7D83CA104",
-                "signerPublicKey": "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B",
+                "signature": 
+                    "3F989538EEEBA80AB3394475B8BA93B4\
+                      0B75277B4D12D9003998E20CFBE66721\
+                      E38B606184A5DA704257B8D766FAEE28\
+                      3901EB0A3945B97C8D18AFB7D83CA104",
+                "signerPublicKey": 
+                    "25189135BF2307DCBCD1657A34ABC3FD\
+                      EEC04A126D4572876BCA4F514DB5AC9B",
                 "version": 1,
                 "network": 152,
                 "type": 16724,
                 "maxFee": "19100",
                 "deadline": "54296609500",
-                "recipientAddress": "988EF2B2B89F6BC742C3902F8FCD66CF3B096A3B970DCE0D",
+                "recipientAddress": 
+                    "988EF2B2B89F6BC742C3902F8FCD66CF3B096A3B970DCE0D",
                 "mosaics": [
                     {
                         "id": "72C0212E67A08BCE",
@@ -500,22 +557,33 @@ try {
             "id": "669C9D7A527B051AC20A61E9",
             "meta": {
                 "height": "1593462",
-                "hash": "963BFB1866067979D6105053DB85BA190DF22E0ABE39732596361B8788EDA664",
-                "merkleComponentHash": "963BFB1866067979D6105053DB85BA190DF22E0ABE39732596361B8788EDA664",
+                "hash": 
+                    "963BFB1866067979D6105053DB85BA19\
+                      0DF22E0ABE39732596361B8788EDA664",
+                "merkleComponentHash": 
+                    "963BFB1866067979D6105053DB85BA19\
+                      0DF22E0ABE39732596361B8788EDA664",
                 "index": 0,
                 "timestamp": "54289494625",
                 "feeMultiplier": 100
             },
             "transaction": {
                 "size": 191,
-                "signature": "71B2D3DA6B83E6904DEB1EE5AE259D6F51B71E742B3F4D5B9EC394BADC844A1574F9418F0349D825AAD836100F39F0AB87EC0BF19BE8E21B1AB94D0AC11B7806",
-                "signerPublicKey": "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B",
+                "signature": 
+                    "71B2D3DA6B83E6904DEB1EE5AE259D6F\
+                      51B71E742B3F4D5B9EC394BADC844A15\
+                      74F9418F0349D825AAD836100F39F0AB\
+                      87EC0BF19BE8E21B1AB94D0AC11B7806",
+                "signerPublicKey": 
+                    "25189135BF2307DCBCD1657A34ABC3FD\
+                      EEC04A126D4572876BCA4F514DB5AC9B",
                 "version": 1,
                 "network": 152,
                 "type": 16724,
                 "maxFee": "19100",
                 "deadline": "54296687628",
-                "recipientAddress": "98D02DDEA92E7186B5321831A58554E7B6EB58454B08161E",
+                "recipientAddress": 
+                    "98D02DDEA92E7186B5321831A58554E7B6EB58454B08161E",
                 "mosaics": [
                     {
                         "id": "72C0212E67A08BCE",
@@ -529,22 +597,33 @@ try {
             "id": "669CA1CC527B051AC20A6227",
             "meta": {
                 "height": "1593492",
-                "hash": "5B1974CD5B0958F5A716151EA677A28C20B348920D65E8ECAFEA5C52726E6CD4",
-                "merkleComponentHash": "5B1974CD5B0958F5A716151EA677A28C20B348920D65E8ECAFEA5C52726E6CD4",
+                "hash": 
+                    "5B1974CD5B0958F5A716151EA677A28C\
+                      20B348920D65E8ECAFEA5C52726E6CD4",
+                "merkleComponentHash": 
+                    "5B1974CD5B0958F5A716151EA677A28C\
+                      20B348920D65E8ECAFEA5C52726E6CD4",
                 "index": 0,
                 "timestamp": "54290601924",
                 "feeMultiplier": 100
             },
             "transaction": {
                 "size": 191,
-                "signature": "2ABCC254980A9C662D3A435149E52891FFCC7576AF19F9CEE25053E34A3543EA216A79D3884DFC7770993D32B68EB65ACAFC7A677BBFF363EA0432D725DF060C",
-                "signerPublicKey": "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B",
+                "signature": 
+                    "2ABCC254980A9C662D3A435149E52891\
+                      FFCC7576AF19F9CEE25053E34A3543EA\
+                      216A79D3884DFC7770993D32B68EB65A\
+                      CAFC7A677BBFF363EA0432D725DF060C",
+                "signerPublicKey": 
+                    "25189135BF2307DCBCD1657A34ABC3FD\
+                      EC04A126D4572876BCA4F514DB5AC9B",
                 "version": 1,
                 "network": 152,
                 "type": 16724,
                 "maxFee": "19100",
                 "deadline": "54297798137",
-                "recipientAddress": "98A1947584CC5BF18F0C31C76BEB6785639E710DF8D0C65A",
+                "recipientAddress": 
+                    "98A1947584CC5BF18F0C31C76BEB6785639E710DF8D0C65A",
                 "mosaics": [
                     {
                         "id": "72C0212E67A08BCE",
@@ -558,22 +637,33 @@ try {
             "id": "669CA3A1527B051AC20A6243",
             "meta": {
                 "height": "1593505",
-                "hash": "45AE0769D78F2CF7CBD86657B3E0B0E1AAE63D30EA53708B032C00A1A22D0BC0",
-                "merkleComponentHash": "45AE0769D78F2CF7CBD86657B3E0B0E1AAE63D30EA53708B032C00A1A22D0BC0",
+                "hash": 
+                    "45AE0769D78F2CF7CBD86657B3E0B0E1\
+                      AAE63D30EA53708B032C00A1A22D0BC0",
+                "merkleComponentHash": 
+                    "45AE0769D78F2CF7CBD86657B3E0B0E1\
+                      AAE63D30EA53708B032C00A1A22D0BC0",
                 "index": 0,
                 "timestamp": "54291069705",
                 "feeMultiplier": 100
             },
             "transaction": {
                 "size": 191,
-                "signature": "F484662FCF3E8C6A5AED6CBF145709191F766F75496C712B4096B1A3B1CE1DF9B19C7E6B4EAED093B5C6649C91315F4ADC2F05537389BD6B773C888D02192106",
-                "signerPublicKey": "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B",
+                "signature": 
+                    "F484662FCF3E8C6A5AED6CBF14570919\
+                      1F766F75496C712B4096B1A3B1CE1DF9\
+                      B19C7E6B4EAED093B5C6649C91315F4A\
+                      DC2F05537389BD6B773C888D02192106",
+                "signerPublicKey": 
+                    "25189135BF2307DCBCD1657A34ABC3FD\
+                      EEC04A126D4572876BCA4F514DB5AC9B",
                 "version": 1,
                 "network": 152,
                 "type": 16724,
                 "maxFee": "19100",
                 "deadline": "54298265506",
-                "recipientAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+                "recipientAddress": 
+                    "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
                 "mosaics": [
                     {
                         "id": "72C0212E67A08BCE",
@@ -587,22 +677,33 @@ try {
             "id": "669CA651527B051AC20A6272",
             "meta": {
                 "height": "1593524",
-                "hash": "A5C897E3FACFEBE21C0E7E5AFC34B03CB69FFE7401E9EB526A518B1CD9909B30",
-                "merkleComponentHash": "A5C897E3FACFEBE21C0E7E5AFC34B03CB69FFE7401E9EB526A518B1CD9909B30",
+                "hash": 
+                    "A5C897E3FACFEBE21C0E7E5AFC34B03C\
+                      B69FFE7401E9EB526A518B1CD9909B30",
+                "merkleComponentHash": 
+                    "A5C897E3FACFEBE21C0E7E5AFC34B03C\
+                      B69FFE7401E9EB526A518B1CD9909B30",
                 "index": 0,
                 "timestamp": "54291758600",
                 "feeMultiplier": 100
             },
             "transaction": {
                 "size": 191,
-                "signature": "4A299DCB86E3394778EDAAF08784692C62E69FBC26E6C65CD097885558F4B6869740BC4713CD91B45C42A10965303BED2C2515B35EB9533CAAA10D96978E100B",
-                "signerPublicKey": "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B",
+                "signature": 
+                    "4A299DCB86E3394778EDAAF08784692C\
+                      62E69FBC26E6C65CD097885558F4B686\
+                      9740BC4713CD91B45C42A10965303BED\
+                      2C2515B35EB9533CAAA10D96978E100B",
+                "signerPublicKey": 
+                    "25189135BF2307DCBCD1657A34ABC3FD\
+                      EEC04A126D4572876BCA4F514DB5AC9B",
                 "version": 1,
                 "network": 152,
                 "type": 16724,
                 "maxFee": "19100",
                 "deadline": "54298910859",
-                "recipientAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+                "recipientAddress": 
+                    "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
                 "mosaics": [
                     {
                         "id": "72C0212E67A08BCE",
@@ -616,22 +717,33 @@ try {
             "id": "669CA651527B051AC20A6273",
             "meta": {
                 "height": "1593524",
-                "hash": "03A4710884D72B960574DFD389ED0F2484A4FF3F25C07ABA5E5645D57830B415",
-                "merkleComponentHash": "03A4710884D72B960574DFD389ED0F2484A4FF3F25C07ABA5E5645D57830B415",
+                "hash": 
+                    "03A4710884D72B960574DFD389ED0F24\
+                      84A4FF3F25C07ABA5E5645D57830B415",
+                "merkleComponentHash": 
+                    "03A4710884D72B960574DFD389ED0F24\
+                      84A4FF3F25C07ABA5E5645D57830B415",
                 "index": 1,
                 "timestamp": "54291758600",
                 "feeMultiplier": 100
             },
             "transaction": {
                 "size": 191,
-                "signature": "CEF6B254B5891E8A003930F41C52315D8A42D51EF04874E20EA63618FF8B3EF5F5CFA6F8D6100CCCFB34F9F3C5255AEB8CB40CBD8481B50B46A9FC59DC1ADE08",
-                "signerPublicKey": "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B",
+                "signature": 
+                    "CEF6B254B5891E8A003930F41C52315D\
+                      8A42D51EF04874E20EA63618FF8B3EF5\
+                      F5CFA6F8D6100CCCFB34F9F3C5255AEB\
+                      8CB40CBD8481B50B46A9FC59DC1ADE08",
+                "signerPublicKey": 
+                    "25189135BF2307DCBCD1657A34ABC3FD\
+                      EEC04A126D4572876BCA4F514DB5AC9B",
                 "version": 1,
                 "network": 152,
                 "type": 16724,
                 "maxFee": "19100",
                 "deadline": "54298936740",
-                "recipientAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+                "recipientAddress": 
+                    "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
                 "mosaics": [
                     {
                         "id": "72C0212E67A08BCE",
@@ -645,22 +757,33 @@ try {
             "id": "669CA685527B051AC20A6277",
             "meta": {
                 "height": "1593525",
-                "hash": "24F6DDD9A53198948EBDC864C5CC8072D08ECA320F2803B45C78A84B12AAED87",
-                "merkleComponentHash": "24F6DDD9A53198948EBDC864C5CC8072D08ECA320F2803B45C78A84B12AAED87",
+                "hash": 
+                    "24F6DDD9A53198948EBDC864C5CC8072\
+                      D08ECA320F2803B45C78A84B12AAED87",
+                "merkleComponentHash":
+                    "24F6DDD9A53198948EBDC864C5CC8072\
+                      D08ECA320F2803B45C78A84B12AAED87",
                 "index": 0,
                 "timestamp": "54291809907",
                 "feeMultiplier": 100
             },
             "transaction": {
                 "size": 191,
-                "signature": "3CAE1F2908409365391D87C48B5C8C3C5C11CD920C7CCA8A8C738FB78140130811AAECA54AA0A235E2956C3B1867280156EF3EEA0609826B617C2CE934901E0F",
-                "signerPublicKey": "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B",
+                "signature": 
+                    "3CAE1F2908409365391D87C48B5C8C3C\
+                      5C11CD920C7CCA8A8C738FB781401308\
+                      11AAECA54AA0A235E2956C3B18672801\
+                      56EF3EEA0609826B617C2CE934901E0F",
+                "signerPublicKey": 
+                    "25189135BF2307DCBCD1657A34ABC3FD\
+                      EEC04A126D4572876BCA4F514DB5AC9B",
                 "version": 1,
                 "network": 152,
                 "type": 16724,
                 "maxFee": "19100",
                 "deadline": "54299008654",
-                "recipientAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+                "recipientAddress": 
+                    "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
                 "mosaics": [
                     {
                         "id": "72C0212E67A08BCE",
@@ -674,22 +797,33 @@ try {
             "id": "669CA709527B051AC20A627F",
             "meta": {
                 "height": "1593528",
-                "hash": "D944914B44D1E210CF9FE7E7BA9C27ACBDB9B8C76E4844CE7E530B564189C323",
-                "merkleComponentHash": "D944914B44D1E210CF9FE7E7BA9C27ACBDB9B8C76E4844CE7E530B564189C323",
+                "hash": 
+                    "D944914B44D1E210CF9FE7E7BA9C27AC\
+                      BDB9B8C76E4844CE7E530B564189C323",
+                "merkleComponentHash": 
+                    "D944914B44D1E210CF9FE7E7BA9C27AC\
+                      BDB9B8C76E4844CE7E530B564189C323",
                 "index": 0,
                 "timestamp": "54291942199",
                 "feeMultiplier": 100
             },
             "transaction": {
                 "size": 191,
-                "signature": "EA54DC04B9E2039090FC73E4B19EC6063542FB41978C6C6A327C1DDA3F04678F50D4F76EF5D0DFC5EB38C002D3F39219C1278DF9BDD2F83954DA1C4A3001E709",
-                "signerPublicKey": "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B",
+                "signature": 
+                    "EA54DC04B9E2039090FC73E4B19EC606\
+                      3542FB41978C6C6A327C1DDA3F04678F\
+                      50D4F76EF5D0DFC5EB38C002D3F39219\
+                      C1278DF9BDD2F83954DA1C4A3001E709",
+                "signerPublicKey": 
+                    "25189135BF2307DCBCD1657A34ABC3FD\
+                      EEC04A126D4572876BCA4F514DB5AC9B",
                 "version": 1,
                 "network": 152,
                 "type": 16724,
                 "maxFee": "19100",
                 "deadline": "54299100360",
-                "recipientAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+                "recipientAddress": 
+                    "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
                 "mosaics": [
                     {
                         "id": "72C0212E67A08BCE",
@@ -703,22 +837,33 @@ try {
             "id": "669CA74F527B051AC20A6285",
             "meta": {
                 "height": "1593530",
-                "hash": "9E2E98FE88AEA9685E0B0A87E56C17F436F429A452CC3A7B187AC37E2B26DB79",
-                "merkleComponentHash": "9E2E98FE88AEA9685E0B0A87E56C17F436F429A452CC3A7B187AC37E2B26DB79",
+                "hash": 
+                    "9E2E98FE88AEA9685E0B0A87E56C17F4\
+                      36F429A452CC3A7B187AC37E2B26DB79",
+                "merkleComponentHash": 
+                    "9E2E98FE88AEA9685E0B0A87E56C17F4\
+                      36F429A452CC3A7B187AC37E2B26DB79",
                 "index": 0,
                 "timestamp": "54292012549",
                 "feeMultiplier": 100
             },
             "transaction": {
                 "size": 191,
-                "signature": "0A550C24171133AAE9349841E3EE919BC9B410CC94CB40C568031901CF0ABB2974F9DFE88068547A06044CB97F4A0315A648D0EEAB163C8A76E5AD2C086C320F",
-                "signerPublicKey": "25189135BF2307DCBCD1657A34ABC3FDEEC04A126D4572876BCA4F514DB5AC9B",
+                "signature": 
+                    "0A550C24171133AAE9349841E3EE919B\
+                      C9B410CC94CB40C568031901CF0ABB29\
+                      74F9DFE88068547A06044CB97F4A0315\
+                      A648D0EEAB163C8A76E5AD2C086C320F",
+                "signerPublicKey": 
+                    "25189135BF2307DCBCD1657A34ABC3FD\
+                      EEC04A126D4572876BCA4F514DB5AC9B",
                 "version": 1,
                 "network": 152,
                 "type": 16724,
                 "maxFee": "19100",
                 "deadline": "54299208979",
-                "recipientAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+                "recipientAddress": 
+                    "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
                 "mosaics": [
                     {
                         "id": "72C0212E67A08BCE",
@@ -788,7 +933,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 ```
 
@@ -840,7 +987,28 @@ sha256sum Linuxファイルパス
 トランザクションのペイロードには1023バイトしか格納できないため、大きなデータは分割してペイロードに詰め込んでアグリゲートトランザクションにします。
 
 ```php
-$bigdata = "C00200000000000093B0B985101C1BDD1BC2BF30D72F35E34265B3F381ECA464733E147A4F0A6B9353547E2E08189EF37E50D271BEB5F09B81CE5816BB34A153D2268520AF630A0A0E5C72B0D5946C1EFEE7E5317C5985F106B739BB0BC07E4F9A288417B3CD6D26000000000198414140770200000000002A769FB40000000076B455CFAE2CCDA9C282BF8556D3E9C9C0DE18B0CBE6660ACCF86EB54AC51B33B001000000000000DB000000000000000E5C72B0D5946C1EFEE7E5317C5985F106B739BB0BC07E4F9A288417B3CD6D26000000000198544198205C1A4CE06C45B3A896B1B2360E03633B9F36BF7F22338B000000000000000066653465353435393833444430383935303645394533424446434235313637433046394232384135344536463032413837364535303734423641303337414643414233303344383841303630353343353345354235413835323835443639434132364235343233343032364244444331443133343139464435353438323930334242453038423832304100000000006800000000000000B2D4FD84B2B63A96AA37C35FC6E0A2341CEC1FD19C8FFC8D93CCCA2B028D1E9D000000000198444198205C1A4CE06C45B3A896B1B2360E03633B9F36BF7F2233BC089179EBBE01A81400140035383435344434373631364336433635373237396800000000000000B2D4FD84B2B63A96AA37C35FC6E0A2341CEC1FD19C8FFC8D93CCCA2B028D1E9D000000000198444198205C1A4CE06C45B3A896B1B2360E03633B9F36BF7F223345ECB996EDDB9BEB1400140035383435344434373631364336433635373237390000000000000000B2D4FD84B2B63A96AA37C35FC6E0A2341CEC1FD19C8FFC8D93CCCA2B028D1E9D5A71EBA9C924EFA146897BE6C9BB3DACEFA26A07D687AC4A83C9B03087640E2D1DDAE952E9DDBC33312E2C8D021B4CC0435852C0756B1EBD983FCE221A981D02";
+$bigdata = "C00200000000000093B0B985101C1BDD1BC2BF30D72F35E34265B3F381ECA464"
+    . "733E147A4F0A6B9353547E2E08189EF37E50D271BEB5F09B81CE5816BB34A153"
+    . "7E4FD2268520AF630A0A0E5C72B0D5946C1EFEE7E5317C5985F106B739BB0BC0"
+    . "00009A288417B3CD6D26000000000198414140770200000000002A769FB40000"
+    . "1B3376B455CFAE2CCDA9C282BF8556D3E9C9C0DE18B0CBE6660ACCF86EB54AC5"
+    . "85F1B001000000000000DB000000000000000E5C72B0D5946C1EFEE7E5317C59"
+    . "6C4506B739BB0BC07E4F9A288417B3CD6D26000000000198544198205C1A4CE0"
+    . "3435B3A896B1B2360E03633B9F36BF7F22338B00000000000000006665346535"
+    . "3841393833444430383935303645394533424446434235313637433046394232"
+    . "4438353445364630324138373645353037344236413033374146434142333033"
+    . "3233384130363035334335334535423541383532383544363943413236423534"
+    . "4238343032364244444331443133343139464435353438323930334242453038"
+    . "A23432304100000000006800000000000000B2D4FD84B2B63A96AA37C35FC6E0"
+    . "6C451CEC1FD19C8FFC8D93CCCA2B028D1E9D000000000198444198205C1A4CE0"
+    . "3435B3A896B1B2360E03633B9F36BF7F2233BC089179EBBE01A8140014003538"
+    . "3A96344434373631364336433635373237396800000000000000B2D4FD84B2B6"
+    . "4441AA37C35FC6E0A2341CEC1FD19C8FFC8D93CCCA2B028D1E9D000000000198"
+    . "9BEB98205C1A4CE06C45B3A896B1B2360E03633B9F36BF7F223345ECB996EDDB"
+    . "0000140014003538343534443437363136433643363537323739000000000000"
+    . "1E9DB2D4FD84B2B63A96AA37C35FC6E0A2341CEC1FD19C8FFC8D93CCCA2B028D"
+    . "0E2D5A71EBA9C924EFA146897BE6C9BB3DACEFA26A07D687AC4A83C9B0308764"
+    . "1DDAE952E9DDBC33312E2C8D021B4CC0435852C0756B1EBD983FCE221A981D02";
 
 $payloads = [];
 for ($i = 0; $i < strlen($bigdata) / 1023; $i++) {

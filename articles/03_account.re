@@ -136,7 +136,11 @@ echo $aliceRawAddress . PHP_EOL;
 
 //emlist[][php]{
 
-$aliceKey = $facade->createAccount(new PrivateKey('85B1B06DD5EE2A611325287705FA909442969B3C7FF47672B1EC34E9C*******'));
+$aliceKey = $facade->createAccount(
+    new PrivateKey(
+        '85B1B06DD5EE2A611325287705FA909442969B3C7FF47672B1EC34E9C*******'
+    )
+);
 
 $aliceRawAddress = $aliceKey->address;
 echo $aliceRawAddress . PHP_EOL;
@@ -149,7 +153,11 @@ echo $aliceRawAddress . PHP_EOL;
 === 公開鍵クラスの生成
 
 //emlist[][php]{
-$alicePublicAccount = $facade->createPublicAccount(new PublicKey('EA648F781721F5094D77149886F18F6B2C2F621B2A3FB8CFA1E382B9E011DFF3'));
+$alicePublicAccount = $facade->createPublicAccount(
+    new PublicKey(
+        'EA648F781721F5094D77149886F18F6B2C2F621B2A3FB8CFA1E382B9E011DFF3'
+    )
+);
 
 var_dump($alicePublicAccount->address);
 echo substr($alicePublicAccount->publicKey, 2, 66) . PHP_EOL;
@@ -238,7 +246,8 @@ echo $account . PHP_EOL;
         "version": 1,
         "address": "98DB7D112950B62E41C6A46195C25E5257000A66B632554E",
         "addressHeight": "1591329",
-        "publicKey": "0000000000000000000000000000000000000000000000000000000000000000",
+        "publicKey":
+            "0000000000000000000000000000000000000000000000000000000000000000",
         "publicKeyHeight": "0",
         "accountType": 0,
         "supplementalPublicKeys": {},
@@ -279,20 +288,31 @@ Aliceの秘密鍵・Bobの公開鍵で暗号化し、Aliceの公開鍵・Bobの�
 $bobKey = new KeyPair(PrivateKey::random());
 
 $message = "Hello Symbol!";
-$encryptedMessage = $aliceKey->messageEncoder()->encode($bobKey->publicKey(), $message);
-$encryptedMessage = $aliceMesgEncoder->encode($bobKey->publicKey(), $message);
+$encryptedMessage = $aliceKey->messageEncoder()
+    ->encode(
+        $bobKey->publicKey(),
+        $message
+);
+$encryptedMessage = $aliceMesgEncoder->encode(
+    $bobKey->publicKey(),
+    $message
+);
 echo strtoupper(bin2hex($encryptedMessage)) . PHP_EOL;
 //}
 
 //emlist{
-> 0105949FB22EF11566D1E7F3EED230CE73D93D71BFD1AAE19D78315FD4F8028D1D16AC223A8A7E9D5AAB
+> "0105949FB22EF11566D1E7F3EED230CE73D93D71BFD1AAE19D78315FD4F80"
+."28D1D16AC223A8A7E9D5AAB"
 //}
 
 ==== 復号
 
 //emlist[][php]{
 $bobMsgEncoder = new MessageEncoder($bobKey);
-$decryptMessageData = $bobMsgEncoder->tryDecode($aliceKey->keyPair->publicKey(), $encryptedMessage);
+$decryptMessageData = $bobMsgEncoder->tryDecode(
+    $aliceKey->keyPair->publicKey(),
+    $encryptedMessage
+);
 var_dump($decryptMessageData);
 if($decryptMessageData['isDecoded']){
     echo "\nDecoded message: " . PHP_EOL;
@@ -324,7 +344,8 @@ echo $signature . PHP_EOL;
 //}
 
 //emlist{
-> 0x1D37BA4A84CF6161A3659038040BD446AC531F116083847E73795DD7188A512AE03BF5326991A81A5D6A0308662242BD77E767AF8F9B3CCC401CCE765AF17C03
+> "0x1D37BA4A84CF6161A3659038040BD446AC531F116083847E73795DD7188A512A"
+."E03BF5326991A81A5D6A0308662242BD77E767AF8F9B3CCC401CCE765AF17C03"
 //}
 
 ==== 検証

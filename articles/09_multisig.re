@@ -40,8 +40,12 @@ echo $carolKey5->keyPair->privateKey() . PHP_EOL;
 ===== URL出力
 
 //emlist[][php]{
-echo "https://testnet.symbol.tools/?recipient=" . $bobKey->address . "&amount=20" . PHP_EOL;
-echo "https://testnet.symbol.tools/?recipient=" . $carolKey1->address . "&amount=20" . PHP_EOL;
+echo "https://testnet.symbol.tools/?recipient="
+ . $bobKey->address
+ . "&amount=20" . PHP_EOL;
+echo "https://testnet.symbol.tools/?recipient="
+ . $carolKey1->address
+ . "&amount=20" . PHP_EOL;
 //}
 
 == 9.1 マルチシグの登録
@@ -98,7 +102,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -215,7 +221,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -279,7 +287,9 @@ try {
   $result = $apiInstance->announceTransaction($hashLockJsonPayload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -289,7 +299,9 @@ try {
   $result = $apiInstance->announcePartialTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -302,7 +314,9 @@ try {
  * 連署
  */
 // トランザクションの取得
-$txInfo = $apiInstance->getPartialTransaction($facade->hashTransaction($aggregateTx));
+$txInfo = $apiInstance->getPartialTransaction(
+    $facade->hashTransaction($aggregateTx)
+);
 
 
 /**
@@ -322,7 +336,9 @@ try {
   $result = $apiInstance->announceCosignatureTransaction($body);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 echo 'TxHash' . PHP_EOL;
 echo $signTxHash->__toString() . PHP_EOL;
@@ -345,7 +361,9 @@ try {
   $result = $apiInstance->announceCosignatureTransaction($body);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 echo 'TxHash' . PHP_EOL;
 echo $signTxHash->__toString() . PHP_EOL;
@@ -365,65 +383,80 @@ console.log(txInfo);
 
 //emlist{
 {
-    "id": "66A4BF0F527B051AC20AF327",
-    "meta": {
-        "height": "1608331",
-        "hash": "6122124B72EEE31237F0CBF1A9A133E3D94AAB0C15B8582CCBA7187082E5DAD4",
-        "merkleComponentHash": "593B38945C4FF97085686285A409797ADA0EC3C5B167150F898C624E8C98E8AE",
-        "index": 0,
-        "timestamp": "54822380100",
-        "feeMultiplier": 100
-    },
-    "transaction": {
-        "size": 480,
-        "signature": "B899E6F18C51927E35126D87803AD560C29FBD9F38A403F6DF7DDAF7E44A9E83CF83555DC3B6D90F93A288DB8083145FB9EDE4F2B4E247ED65A460EC63F53108",
-        "signerPublicKey": "8D1516F8F7C8352680C19F578238D8C258A281E9FD66A72A384C10776FD42DE1",
-        "version": 2,
-        "network": 152,
-        "type": 16961,
-        "maxFee": "48000",
-        "deadline": "54829501706",
-        "transactionsHash": "CC4EEE544A2376EF9F7951627971E339638DBEAC4102D9173B4ECD814E6E0EFB",
-        "cosignatures": [
+  "id": "66A4BF0F527B051AC20AF327",
+  "meta": {
+    "height": "1608331",
+    "hash": 
+      "6122124B72EEE31237F0CBF1A9A133E3D94AAB0C15B8582CCBA7187082E5DAD4",
+    "merkleComponentHash": 
+      "593B38945C4FF97085686285A409797ADA0EC3C5B167150F898C624E8C98E8AE",
+    "index": 0,
+    "timestamp": "54822380100",
+    "feeMultiplier": 100
+  },
+  "transaction": {
+    "size": 480,
+    "signature": 
+      "B899E6F18C51927E35126D87803AD560C29FBD9F38A403F6DF7DDAF7E44A9E83\
+        CF83555DC3B6D90F93A288DB8083145FB9EDE4F2B4E247ED65A460EC63F53108",
+    "signerPublicKey": 
+      "8D1516F8F7C8352680C19F578238D8C258A281E9FD66A72A384C10776FD42DE1",
+    "version": 2,
+    "network": 152,
+    "type": 16961,
+    "maxFee": "48000",
+    "deadline": "54829501706",
+    "transactionsHash": 
+      "CC4EEE544A2376EF9F7951627971E339638DBEAC4102D9173B4ECD814E6E0EFB",
+    "cosignatures": [
+      {
+        "signature": 
+          "3E52A9D398BDD97022F7A69CEA0F38EC0A208E1726372879DD4A3A64209AB551\
+            7F7E769B89D4C05BD920325AE461A597E6A4FF04DA82C32008E8086D11670908",
+        "version": "0",
+        "signerPublicKey": 
+          "4AA192AE9F4FD262E489BCA3B79490FB39F61D1CD7206D50F856891CAA3CCAF7"
+      },
+      {
+        "signature": 
+          "5B1AA912AEBDDAAAA7DD4EDAD03A29B5A9FEF6CAA52E9DA1961AA6CB0A1CCAD5\
+            059DACBCD6380425912F982AD31BD08479BB95EC88C5A8110B389FAFF2DB0A08",
+        "version": "0",
+        "signerPublicKey": 
+          "D1C49DF9CA73E0BAA204EFDF88F714548FD40B2E1D9A8EE31FE98AD7E3C877FD"
+      }
+    ],
+    "transactions": [
+      {
+        "id": "66A4BF0F527B051AC20AF328",
+        "meta": {
+          "height": "1608331",
+          "aggregateHash": 
+            "6122124B72EEE31237F0CBF1A9A133E3D94AAB0C15B8582CCBA7187082E5DAD4",
+          "aggregateId": "66A4BF0F527B051AC20AF327",
+          "index": 0,
+          "timestamp": "54822380100",
+          "feeMultiplier": 100
+        },
+        "transaction": {
+          "signerPublicKey": 
+            "AD4D43687EFDE2A15CF316FCCB209F80DC07498090725FE9C9C2A239E7B38E39",
+          "version": 1,
+          "network": 152,
+          "type": 16724,
+          "recipientAddress": 
+            "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
+          "mosaics": [
             {
-                "signature": "3E52A9D398BDD97022F7A69CEA0F38EC0A208E1726372879DD4A3A64209AB5517F7E769B89D4C05BD920325AE461A597E6A4FF04DA82C32008E8086D11670908",
-                "version": "0",
-                "signerPublicKey": "4AA192AE9F4FD262E489BCA3B79490FB39F61D1CD7206D50F856891CAA3CCAF7"
-            },
-            {
-                "signature": "5B1AA912AEBDDAAAA7DD4EDAD03A29B5A9FEF6CAA52E9DA1961AA6CB0A1CCAD5059DACBCD6380425912F982AD31BD08479BB95EC88C5A8110B389FAFF2DB0A08",
-                "version": "0",
-                "signerPublicKey": "D1C49DF9CA73E0BAA204EFDF88F714548FD40B2E1D9A8EE31FE98AD7E3C877FD"
+              "id": "E74B99BA41F4AFEE",
+              "amount": "1000000"
             }
-        ],
-        "transactions": [
-            {
-                "id": "66A4BF0F527B051AC20AF328",
-                "meta": {
-                    "height": "1608331",
-                    "aggregateHash": "6122124B72EEE31237F0CBF1A9A133E3D94AAB0C15B8582CCBA7187082E5DAD4",
-                    "aggregateId": "66A4BF0F527B051AC20AF327",
-                    "index": 0,
-                    "timestamp": "54822380100",
-                    "feeMultiplier": 100
-                },
-                "transaction": {
-                    "signerPublicKey": "AD4D43687EFDE2A15CF316FCCB209F80DC07498090725FE9C9C2A239E7B38E39",
-                    "version": 1,
-                    "network": 152,
-                    "type": 16724,
-                    "recipientAddress": "98E521BD0F024F58E670A023BF3A14F3BECAF0280396BED0",
-                    "mosaics": [
-                        {
-                            "id": "E74B99BA41F4AFEE",
-                            "amount": "1000000"
-                        }
-                    ],
-                    "message": "0074657374"
-                }
-            }
-        ]
-    }
+          ],
+          "message": "0074657374"
+        }
+      }
+    ]
+  }
 }
 //}
 
@@ -549,7 +582,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -602,7 +637,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 

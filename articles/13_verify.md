@@ -15,7 +15,24 @@
 
 ```
 payload =
-  "2802000000000000A5151FD55D82351DD488DB5563DD328DA72B2AD25B513C1D0F7F78AFF4D35BA094ABF505C74E6D6BE1FA19F3E5AC60A85E1A4EDC4AC07DECC0E56C59D5D24F0B69A31A837EB7DE323F08CA52495A57BA0A95B52D1BB54CEA9A94C12A87B1CADB0000000002984141A0D70000000000000EEAD6810500000062E78B6170628861B4FC4FCA75210352ACDBD2378AC0A447A3DCF63F969366BB1801000000000000540000000000000069A31A837EB7DE323F08CA52495A57BA0A95B52D1BB54CEA9A94C12A87B1CADB000000000198544198A8D76FEF8382274D472EE377F2FF3393E5B62C08B4329D04000000000000000074783100000000590000000000000069A31A837EB7DE323F08CA52495A57BA0A95B52D1BB54CEA9A94C12A87B1CADB000000000198444198A8D76FEF8382274D472EE377F2FF3393E5B62C08B4329D6668A0DE72812AAE05000500746573743100000000000000590000000000000069A31A837EB7DE323F08CA52495A57BA0A95B52D1BB54CEA9A94C12A87B1CADB000000000198444198A8D76FEF8382274D472EE377F2FF3393E5B62C08B4329DBF85DADBFD54C48D050005007465737432000000000000000000000000000000662CEDF69962B1E0F1BF0C43A510DFB12190128B90F7FE9BA48B1249E8E10DBEEDD3B8A0555B4237505E3E0822B74BCBED8AA3663022413AFDA265BE1C55431ACAE3EA975AF6FD61DEFFA6A16CBA5174A16EF5553AE669D5803A0FA9D1424600";
+  "2802000000000000A5151FD55D82351DD488DB5563DD328DA72B2AD25B513C1D\
+    0F7F78AFF4D35BA094ABF505C74E6D6BE1FA19F3E5AC60A85E1A4EDC4AC07DEC\
+    C0E56C59D5D24F0B69A31A837EB7DE323F08CA52495A57BA0A95B52D1BB54CEA\
+    9A94C12A87B1CADB0000000002984141A0D70000000000000EEAD68105000000\
+    62E78B6170628861B4FC4FCA75210352ACDBD2378AC0A447A3DCF63F969366BB\
+    1801000000000000540000000000000069A31A837EB7DE323F08CA52495A57BA\
+    0A95B52D1BB54CEA9A94C12A87B1CADB000000000198544198A8D76FEF838227\
+    4D472EE377F2FF3393E5B62C08B4329D04000000000000000074783100000000\
+    590000000000000069A31A837EB7DE323F08CA52495A57BA0A95B52D1BB54CEA\
+    9A94C12A87B1CADB000000000198444198A8D76FEF8382274D472EE377F2FF33\
+    93E5B62C08B4329D6668A0DE72812AAE05000500746573743100000000000000\
+    590000000000000069A31A837EB7DE323F08CA52495A57BA0A95B52D1BB54CEA\
+    9A94C12A87B1CADB000000000198444198A8D76FEF8382274D472EE377F2FF33\
+    93E5B62C08B4329DBF85DADBFD54C48D05000500746573743200000000000000\
+    0000000000000000662CEDF69962B1E0F1BF0C43A510DFB12190128B90F7FE9B\
+    A48B1249E8E10DBEEDD3B8A0555B4237505E3E0822B74BCBED8AA3663022413A\
+    FDA265BE1C55431ACAE3EA975AF6FD61DEFFA6A16CBA5174A16EF5553AE669D5\
+    803A0FA9D1424600";
 height = 686312;
 ```
 
@@ -45,7 +62,8 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
         (
             [0] => SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1 Object
                 (
-                    [recipientAddress] => SymbolSdk\Symbol\Models\UnresolvedAddress Object
+                    [recipientAddress] => SymbolSdk\Symbol\Models\UnresolvedAddress
+                        Object
                         (
                             [binaryData] => ���o'MG.�w��3���2�
                         )
@@ -55,8 +73,12 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
                         )
 
                     [message] => tx1
-                    [transferTransactionBodyReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:private] => 0
-                    [transferTransactionBodyReserved_2:SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:private] => 0
+                    [transferTransactionBodyReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:
+                        private] => 0
+                    [transferTransactionBodyReserved_2:
+                        SymbolSdk\Symbol\Models\EmbeddedTransferTransactionV1:
+                        private] => 0
                     [signerPublicKey] => SymbolSdk\Symbol\Models\PublicKey Object
                         (
                             [binaryData] => i��~��2�RIZW�
@@ -74,13 +96,19 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
                             [value] => 16724
                         )
 
-                    [embeddedTransactionHeaderReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransaction:private] => 0
-                    [entityBodyReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransaction:private] => 0
+                    [embeddedTransactionHeaderReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransaction:
+                        private] => 0
+                    [entityBodyReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransaction:
+                        private] => 0
                 )
 
-            [1] => SymbolSdk\Symbol\Models\EmbeddedAccountMetadataTransactionV1 Object
+            [1] => SymbolSdk\Symbol\Models\EmbeddedAccountMetadataTransactionV1
+                Object
                 (
-                    [targetAddress] => SymbolSdk\Symbol\Models\UnresolvedAddress Object
+                    [targetAddress] => SymbolSdk\Symbol\Models\UnresolvedAddress
+                        Object
                         (
                             [binaryData] => ���o'MG.�w��3���2�
                         )
@@ -105,13 +133,19 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
                             [value] => 16708
                         )
 
-                    [embeddedTransactionHeaderReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransaction:private] => 0
-                    [entityBodyReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransaction:private] => 0
+                    [embeddedTransactionHeaderReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransaction:
+                        private] => 0
+                    [entityBodyReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransaction:
+                        private] => 0
                 )
 
-            [2] => SymbolSdk\Symbol\Models\EmbeddedAccountMetadataTransactionV1 Object
+            [2] => SymbolSdk\Symbol\Models\EmbeddedAccountMetadataTransactionV1
+                Object
                 (
-                    [targetAddress] => SymbolSdk\Symbol\Models\UnresolvedAddress Object
+                    [targetAddress] => SymbolSdk\Symbol\Models\UnresolvedAddress
+                        Object
                         (
                             [binaryData] => ���o'MG.�w��3���2�
                         )
@@ -136,8 +170,12 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
                             [value] => 16708
                         )
 
-                    [embeddedTransactionHeaderReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransaction:private] => 0
-                    [entityBodyReserved_1:SymbolSdk\Symbol\Models\EmbeddedTransaction:private] => 0
+                    [embeddedTransactionHeaderReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransaction:
+                        private] => 0
+                    [entityBodyReserved_1:
+                        SymbolSdk\Symbol\Models\EmbeddedTransaction:
+                        private] => 0
                 )
 
         )
@@ -162,7 +200,9 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
 
         )
 
-    [aggregateTransactionHeaderReserved_1:SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2:private] => 0
+    [aggregateTransactionHeaderReserved_1:
+        SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2:
+        private] => 0
     [signature] => SymbolSdk\Symbol\Models\Signature Object
         (
             [binaryData] => ��]�5Ԉ�Uc�2��+*�[Q<x���[�����Nmk����`�^N�J�}���lY��O
@@ -198,8 +238,12 @@ SymbolSdk\Symbol\Models\AggregateCompleteTransactionV2 Object
             [value] => 23653181966
         )
 
-    [verifiableEntityHeaderReserved_1:SymbolSdk\Symbol\Models\Transaction:private] => 0
-    [entityBodyReserved_1:SymbolSdk\Symbol\Models\Transaction:private] => 0
+    [verifiableEntityHeaderReserved_1:
+        SymbolSdk\Symbol\Models\Transaction:
+        private] => 0
+    [entityBodyReserved_1:
+        SymbolSdk\Symbol\Models\Transaction:
+        private] => 0
 )
 ```
 
@@ -383,8 +427,12 @@ if($block['type'] === BlockType::IMPORTANCE){
   hash_update($hasher, hex2bin($block['state_hash']));
   hash_update($hasher, hex2bin($block['beneficiary_address']));
   hash_update($hasher, hex2bin(reverseHex($block['fee_multiplier'], 4)));
-  hash_update($hasher, hex2bin(reverseHex($block['voting_eligible_accounts_count'], 4)));
-  hash_update($hasher, hex2bin(reverseHex($block['harvesting_eligible_accounts_count'], 8)));
+  hash_update($hasher, hex2bin(reverseHex(
+    $block['voting_eligible_accounts_count'], 4
+  )));
+  hash_update($hasher, hex2bin(reverseHex(
+    $block['harvesting_eligible_accounts_count'], 8
+  )));
   hash_update($hasher, hex2bin(reverseHex($block['total_voting_balance'], 8)));
   hash_update($hasher, hex2bin($block['previous_importance_block_hash']));
 
@@ -419,20 +467,31 @@ SymbolRestClient\Model\BlockInfoDTO Object
 
                     [container:protected] => Array
                         (
-                            [hash] => BC3AA1488BFF936B82D0E610C127AE7943A189B44D8B0989E7E5F9EE2B5A6C2F
+                            [hash] => 
+BC3AA1488BFF936B82D0E610C127AE7943A189B44D8B0989E7E5F9EE2B5A6C2F
                             [total_fee] => 18400
-                            [generation_hash] => 9B5F2DA8E11FE168476EAAEBA4C7CA1902709717A16DF4E01DC9E4135263B145
+                            [generation_hash] => 
+9B5F2DA8E11FE168476EAAEBA4C7CA1902709717A16DF4E01DC9E4135263B145
                             [state_hash_sub_cache_merkle_roots] => Array
                                 (
-                                    [0] => F515B3574DBC4E25970911D31D3EC904FEC2F53A913818DD22767F0803AAA448
-                                    [1] => 2A9CC5948DF4D61A242BD4FBFE4059BD28035F92AF8C939E1619E555E228B365
-                                    [2] => 916F3DC4F4570B0605BE8D5B9F0AC6D7C9D6512C50317145667B8EC4A9C034CC
-                                    [3] => CB1E5FB72D99DCF3323C61008ACDD88601E09627DAF6F26CB9A4D212DE2FAAE6
-                                    [4] => 7BD54F7855071892E30C38209069FEDA4053753631F29D9EFBFDE19D3D46986D
-                                    [5] => 71A589B4B0F1246A4959D7DDFB1A1DD52239F8061A000A6AA77EBE0CAFA82C13
-                                    [6] => 5BCA0065AFA492A9285B16B046A82E09F273ED09624E48D4A5172565C95C41F1
-                                    [7] => 5370FB2FFEE6CDD1BE697D98B30BC405F2456960A3047D8806D2CDA919245B31
-                                    [8] => DA846A9D0C7E6C284B1ED0FFE11CFCA35CE659C2B3F8E562330974D9CCE08BDF
+                                    [0] => 
+F515B3574DBC4E25970911D31D3EC904FEC2F53A913818DD22767F0803AAA448
+                                    [1] => 
+2A9CC5948DF4D61A242BD4FBFE4059BD28035F92AF8C939E1619E555E228B365
+                                    [2] => 
+916F3DC4F4570B0605BE8D5B9F0AC6D7C9D6512C50317145667B8EC4A9C034CC
+                                    [3] => 
+CB1E5FB72D99DCF3323C61008ACDD88601E09627DAF6F26CB9A4D212DE2FAAE6
+                                    [4] => 
+7BD54F7855071892E30C38209069FEDA4053753631F29D9EFBFDE19D3D46986D
+                                    [5] => 
+71A589B4B0F1246A4959D7DDFB1A1DD52239F8061A000A6AA77EBE0CAFA82C13
+                                    [6] => 
+5BCA0065AFA492A9285B16B046A82E09F273ED09624E48D4A5172565C95C41F1
+                                    [7] => 
+5370FB2FFEE6CDD1BE697D98B30BC405F2456960A3047D8806D2CDA919245B31
+                                    [8] => 
+DA846A9D0C7E6C284B1ED0FFE11CFCA35CE659C2B3F8E562330974D9CCE08BDF
                                 )
 
                             [total_transactions_count] => 1
@@ -451,27 +510,39 @@ SymbolRestClient\Model\BlockInfoDTO Object
                     [container:protected] => Array
                         (
                             [size] => 608
-                            [signature] => 0D2A4A8833AC55FA18462D0321DFD4E1CC0653D46DD3BC4B08EB935E3BD84F8878F5D2416A36179A137F1475A877BDAE1F722A2FBD6D87D2773507538E81C001
-                            [signer_public_key] => 87EEE5E3D69BAA60C093FC2080BA5D36E623C5C0BCDC529B8712A9B6212420D7
+                            [signature] => 
+"0D2A4A8833AC55FA18462D0321DFD4E1CC0653D46DD3BC4B08EB935E3BD84F"
+. "8878F5D2416A36179A137F1475A877BDAE1F722A2FBD6D87D2773507538E81C001"
+                            [signer_public_key] => 
+87EEE5E3D69BAA60C093FC2080BA5D36E623C5C0BCDC529B8712A9B6212420D7
                             [version] => 1
                             [network] => 152
                             [type] => 33347
                             [height] => 1440
                             [timestamp] => 109140035
                             [difficulty] => 10000000000000
-                            [proof_gamma] => 6B0296960EF59524332C789834BE0D859076722B59C1233432A0D5506E356BC2
-                            [proof_verification_hash] => 0C8F8F162DD82A3F26D3019289365B57
-                            [proof_scalar] => 8EE0BEC47CFD1A77CDA848A6CFAFF02EAFC05EEE02D374BA7758BEFE22090F07
-                            [previous_block_hash] => 06EBD4C3C2C654FFD75463FF2F98DC26F5629446840DFEAC4803B29B5765E084
-                            [transactions_hash] => 5AB5E7A0E087BB3FB788BFC44443240E53C4F53AE558C23A60DA8140C6CCC50D
-                            [receipts_hash] => 374F773A5003D374FD185FF6EB2BE2997333108A600A38E85074E627261A420E
-                            [state_hash] => 518861727944E73D76EE10173DFE0ADA56BF252890BC27C75246989B2046B803
-                            [beneficiary_address] => 98BE9AC4CD3E833736762A12A63065FF42E476744E6FC597
+                            [proof_gamma] => 
+6B0296960EF59524332C789834BE0D859076722B59C1233432A0D5506E356BC2
+                            [proof_verification_hash] => 
+0C8F8F162DD82A3F26D3019289365B57
+                            [proof_scalar] => 
+8EE0BEC47CFD1A77CDA848A6CFAFF02EAFC05EEE02D374BA7758BEFE22090F07
+                            [previous_block_hash] => 
+06EBD4C3C2C654FFD75463FF2F98DC26F5629446840DFEAC4803B29B5765E084
+                            [transactions_hash] => 
+5AB5E7A0E087BB3FB788BFC44443240E53C4F53AE558C23A60DA8140C6CCC50D
+                            [receipts_hash] => 
+374F773A5003D374FD185FF6EB2BE2997333108A600A38E85074E627261A420E
+                            [state_hash] => 
+518861727944E73D76EE10173DFE0ADA56BF252890BC27C75246989B2046B803
+                            [beneficiary_address] => 
+98BE9AC4CD3E833736762A12A63065FF42E476744E6FC597
                             [fee_multiplier] => 100
                             [voting_eligible_accounts_count] => 4
                             [harvesting_eligible_accounts_count] => 18
                             [total_voting_balance] => 19000392156923
-                            [previous_importance_block_hash] => 157F710AB66239C09F262BF2F243568F2E25B58FA16E85A47E22966D20041466
+                            [previous_importance_block_hash] => 
+157F710AB66239C09F262BF2F243568F2E25B58FA16E85A47E22966D20041466
                         )
 
                 )
@@ -482,15 +553,33 @@ SymbolRestClient\Model\BlockInfoDTO Object
 ```
 ```php
 $hasher = hash_init('sha3-256');
-hash_update($hasher, hex2bin($blockInfo['meta']['state_hash_sub_cache_merkle_roots'][0]));
-hash_update($hasher, hex2bin($blockInfo['meta']['state_hash_sub_cache_merkle_roots'][1]));
-hash_update($hasher, hex2bin($blockInfo['meta']['state_hash_sub_cache_merkle_roots'][2]));
-hash_update($hasher, hex2bin($blockInfo['meta']['state_hash_sub_cache_merkle_roots'][3]));
-hash_update($hasher, hex2bin($blockInfo['meta']['state_hash_sub_cache_merkle_roots'][4]));
-hash_update($hasher, hex2bin($blockInfo['meta']['state_hash_sub_cache_merkle_roots'][5]));
-hash_update($hasher, hex2bin($blockInfo['meta']['state_hash_sub_cache_merkle_roots'][6]));
-hash_update($hasher, hex2bin($blockInfo['meta']['state_hash_sub_cache_merkle_roots'][7]));
-hash_update($hasher, hex2bin($blockInfo['meta']['state_hash_sub_cache_merkle_roots'][8]));
+hash_update($hasher, hex2bin(
+    $blockInfo['meta']['state_hash_sub_cache_merkle_roots'][0]
+));
+hash_update($hasher, hex2bin(
+    $blockInfo['meta']['state_hash_sub_cache_merkle_roots'][1]
+));
+hash_update($hasher, hex2bin(
+    $blockInfo['meta']['state_hash_sub_cache_merkle_roots'][2]
+));
+hash_update($hasher, hex2bin(
+    $blockInfo['meta']['state_hash_sub_cache_merkle_roots'][3]
+));
+hash_update($hasher, hex2bin(
+    $blockInfo['meta']['state_hash_sub_cache_merkle_roots'][4]
+));
+hash_update($hasher, hex2bin(
+    $blockInfo['meta']['state_hash_sub_cache_merkle_roots'][5]
+));
+hash_update($hasher, hex2bin(
+    $blockInfo['meta']['state_hash_sub_cache_merkle_roots'][6]
+));
+hash_update($hasher, hex2bin(
+    $blockInfo['meta']['state_hash_sub_cache_merkle_roots'][7]
+));
+hash_update($hasher, hex2bin(
+    $blockInfo['meta']['state_hash_sub_cache_merkle_roots'][8]
+));
 $hash = strtoupper(bin2hex(hash_final($hasher, true)));
 echo "===stateHashの検証===" . PHP_EOL;
 var_dump($hash === $blockInfo['block']['state_hash']);
@@ -570,7 +659,10 @@ function checkState($stateProof, $stateHash, $pathHash, $rootHash) {
     });
     $branchLink = reset($branchLink); // 最初の要素を取得
     $linkHash = getBranchHash($branch['encoded_path'], $branch['links']);
-    $bit = substr($merkleBranches[$i]['path'], 0, $merkleBranches[$i]['nibble_count']) . $branchLink['bit'] . $bit;
+    $bit = substr(
+        $merkleBranches[$i]['path'],
+        0,
+        $merkleBranches[$i]['nibble_count']) . $branchLink['bit'] . $bit;
   }
   $treeRootHash = $linkHash; //最後のlinkHashはrootHash
   $treePathHash = $bit . $merkleLeaf['path'];
@@ -610,31 +702,40 @@ $aliceInfo = $accountApiInstance->getAccountInfo($aliceRawAddress);
 $aliceInfo = $aliceInfo["account"];
 
 // アカウント情報から StateHash を導出
-$format = (int)$aliceInfo['importance'] === 0 || strlen($aliceInfo['activity_buckets']) <5 ? 0x00 : 0x01;
+$format = (int)$aliceInfo['importance'] === 0 || 
+    strlen($aliceInfo['activity_buckets']) <5 ? 0x00 : 0x01;
 
 $supplementalPublicKeysMask = 0x00;
 $linkedPublicKey = [];
 if($aliceInfo['supplemental_public_keys']['linked'] !== null){
   $supplementalPublicKeysMask |= 0x01;  // OR 演算子と代入演算子を組み合わせ
-  $linkedPublicKey = hexToUint8($aliceInfo['supplemental_public_keys']['linked']['public_key']);
+  $linkedPublicKey = hexToUint8(
+    $aliceInfo['supplemental_public_keys']['linked']['public_key']
+  );
 }
 
 $nodePublicKey = [];
 if($aliceInfo['supplemental_public_keys']['node'] !== null){
   $supplementalPublicKeysMask |= 0x02;
-  $nodePublicKey = hexToUint8($aliceInfo['supplemental_public_keys']['node']['public_key']);
+  $nodePublicKey = hexToUint8(
+    $aliceInfo['supplemental_public_keys']['node']['public_key']
+  );
 }
 
 $vrfPublicKey = [];
 if($aliceInfo['supplemental_public_keys']['vrf'] !== null){
   $supplementalPublicKeysMask |= 0x04;
-  $vrfPublicKey = hexToUint8($aliceInfo['supplemental_public_keys']['vrf']['public_key']);
+  $vrfPublicKey = hexToUint8(
+    $aliceInfo['supplemental_public_keys']['vrf']['public_key']
+  );
 }
 
 $votingPublicKeys = [];
 if($aliceInfo['supplemental_public_keys']['voting'] !== null){
   foreach($aliceInfo['supplemental_public_keys']['voting']['public_key'] as $key){
-    $votingPublicKeys = array_merge($votingPublicKeys, hexToUint8($key['public_key']));
+    $votingPublicKeys = array_merge(
+      $votingPublicKeys, hexToUint8($key['public_key'])
+    );
   }
 }
 
@@ -648,7 +749,11 @@ if((int)$aliceInfo['importance'] !== 0){
 
 $activityBuckets = [];
 if((int)$aliceInfo['importance'] > 0){
-  for ($idx = 0; $idx < count($aliceInfo['activity_buckets']) || $idx < 5; $idx++) {
+  for (
+    $idx = 0;
+    $idx < count($aliceInfo['activity_buckets']) || $idx < 5;
+    $idx++
+  ) {
     $bucket = $aliceInfo['activity_buckets'][$idx];
     $activityBuckets = array_merge(
       $activityBuckets,

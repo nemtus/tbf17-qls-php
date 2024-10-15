@@ -6,7 +6,9 @@
 //使い捨てアカウントCarolの生成
 $carolKey = $facade->createAccount(PrivateKey::random());
 
-echo "https://testnet.symbol.tools/?recipient=" . $carolKey->address . "&amount=20" . PHP_EOL;
+echo "https://testnet.symbol.tools/?recipient="
+ . $carolKey->address
+ . "&amount=20" . PHP_EOL;
 //}
 
 == 11.1 アカウント制限
@@ -15,7 +17,11 @@ echo "https://testnet.symbol.tools/?recipient=" . $carolKey->address . "&amount=
 
 //emlist[][php]{
 
-$bobKey = $facade->createAccount(new PrivateKey('7CBA79757479402DDCDE6577F938CDE6FD9035ACADC1E343AE155EFA679D462A') );
+$bobKey = $facade->createAccount(
+    new PrivateKey(
+        '7CBA79757479402DDCDE6577F938CDE6FD9035ACADC1E343AE155EFA679D462A'
+    )
+ );
 $bobAddress = $bobKey->address;
 echo 'Bob' . PHP_EOL;
 echo 'Address: ' . $bobAddress . PHP_EOL;
@@ -46,7 +52,9 @@ try {
   $result = $apiInstance->announceTransaction($jsonPayload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -111,7 +119,9 @@ try {
   $result = $apiInstance->announceTransaction($jsonPayload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -154,7 +164,9 @@ try {
   $result = $apiInstance->announceTransaction($jsonPayload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -176,7 +188,32 @@ try {
 TransactionTypeについては以下の通りです。
 
 //emlist[][js]{
-{16705: 'AGGREGATE_COMPLETE', 16707: 'VOTING_KEY_LINK', 16708: 'ACCOUNT_METADATA', 16712: 'HASH_LOCK', 16716: 'ACCOUNT_KEY_LINK', 16717: 'MOSAIC_DEFINITION', 16718: 'NAMESPACE_REGISTRATION', 16720: 'ACCOUNT_ADDRESS_RESTRICTION', 16721: 'MOSAIC_GLOBAL_RESTRICTION', 16722: 'SECRET_LOCK', 16724: 'TRANSFER', 16725: 'MULTISIG_ACCOUNT_MODIFICATION', 16961: 'AGGREGATE_BONDED', 16963: 'VRF_KEY_LINK', 16964: 'MOSAIC_METADATA', 16972: 'NODE_KEY_LINK', 16973: 'MOSAIC_SUPPLY_CHANGE', 16974: 'ADDRESS_ALIAS', 16976: 'ACCOUNT_MOSAIC_RESTRICTION', 16977: 'MOSAIC_ADDRESS_RESTRICTION', 16978: 'SECRET_PROOF', 17220: 'NAMESPACE_METADATA', 17229: 'MOSAIC_SUPPLY_REVOCATION', 17230: 'MOSAIC_ALIAS'}
+{
+  16705: 'AGGREGATE_COMPLETE',
+  16707: 'VOTING_KEY_LINK',
+  16708: 'ACCOUNT_METADATA',
+  16712: 'HASH_LOCK',
+  16716: 'ACCOUNT_KEY_LINK',
+  16717: 'MOSAIC_DEFINITION',
+  16718: 'NAMESPACE_REGISTRATION',
+  16720: 'ACCOUNT_ADDRESS_RESTRICTION',
+  16721: 'MOSAIC_GLOBAL_RESTRICTION',
+  16722: 'SECRET_LOCK',
+  16724: 'TRANSFER',
+  16725: 'MULTISIG_ACCOUNT_MODIFICATION',
+  16961: 'AGGREGATE_BONDED',
+  16963: 'VRF_KEY_LINK',
+  16964: 'MOSAIC_METADATA',
+  16972: 'NODE_KEY_LINK',
+  16973: 'MOSAIC_SUPPLY_CHANGE',
+  16974: 'ADDRESS_ALIAS',
+  16976: 'ACCOUNT_MOSAIC_RESTRICTION',
+  16977: 'MOSAIC_ADDRESS_RESTRICTION',
+  16978: 'SECRET_PROOF',
+  17220: 'NAMESPACE_METADATA',
+  17229: 'MOSAIC_SUPPLY_REVOCATION',
+  17230: 'MOSAIC_ALIAS'
+}
 //}
 
 ===== 注意事項
@@ -302,7 +339,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -350,7 +389,9 @@ try {
   $result = $apiInstance->announceTransaction($jsonPayload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 
 // bobに適用
@@ -374,7 +415,9 @@ try {
   $result = $apiInstance->announceTransaction($jsonPayload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 //}
 
@@ -395,59 +438,62 @@ echo $res . PHP_EOL;
 
 //emlist[][js]{
 {
-    "data": [
-        {
-            "id": "66A5B8E584E82060AFC8F4DD",
-            "mosaicRestrictionEntry": {
-                "version": 1,
-                "compositeHash": "D2F056476C118C5CB1C15978B23603D404CE91629BA2DB82A3D91CEA9D6E9422",
-                "entryType": 1,
-                "mosaicId": "10FE6A79F72DB356",
-                "restrictions": [
-                    {
-                        "key": "9300605567124626807",
-                        "restriction": {
-                            "referenceMosaicId": "0000000000000000",
-                            "restrictionValue": "1",
-                            "restrictionType": 1
-                        }
-                    }
-                ]
+  "data": [
+    {
+      "id": "66A5B8E584E82060AFC8F4DD",
+      "mosaicRestrictionEntry": {
+        "version": 1,
+        "compositeHash": 
+          "D2F056476C118C5CB1C15978B23603D404CE91629BA2DB82A3D91CEA9D6E9422",
+        "entryType": 1,
+        "mosaicId": "10FE6A79F72DB356",
+        "restrictions": [
+          {
+            "key": "9300605567124626807",
+            "restriction": {
+              "referenceMosaicId": "0000000000000000",
+              "restrictionValue": "1",
+              "restrictionType": 1
             }
-        },
-        {
-            "id": "66A5C05484E82060AFC900C0",
-            "mosaicRestrictionEntry": {
-                "version": 1,
-                "compositeHash": "0E562A82F14DB98C1831B570F3D96FE7939AED5AF110FE54EC995DCE8408629F",
-                "entryType": 0,
-                "mosaicId": "10FE6A79F72DB356",
-                "restrictions": [
-                    {
-                        "key": "9300605567124626807"
-                    }
-                ]
-            }
-        },
-        {
-            "id": "66A5C0F384E82060AFC90244",
-            "mosaicRestrictionEntry": {
-                "version": 1,
-                "compositeHash": "164CE57733CEEFE0D8E46B05750C1209B04E96696F46204676B631A63BE005A9",
-                "entryType": 0,
-                "mosaicId": "10FE6A79F72DB356",
-                "restrictions": [
-                    {
-                        "key": "9300605567124626807"
-                    }
-                ]
-            }
-        }
-    ],
-    "pagination": {
-        "pageNumber": 1,
-        "pageSize": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "66A5C05484E82060AFC900C0",
+      "mosaicRestrictionEntry": {
+        "version": 1,
+        "compositeHash": 
+          "0E562A82F14DB98C1831B570F3D96FE7939AED5AF110FE54EC995DCE8408629F",
+        "entryType": 0,
+        "mosaicId": "10FE6A79F72DB356",
+        "restrictions": [
+          {
+            "key": "9300605567124626807"
+          }
+        ]
+      }
+    },
+    {
+      "id": "66A5C0F384E82060AFC90244",
+      "mosaicRestrictionEntry": {
+        "version": 1,
+        "compositeHash": 
+          "164CE57733CEEFE0D8E46B05750C1209B04E96696F46204676B631A63BE005A9",
+        "entryType": 0,
+        "mosaicId": "10FE6A79F72DB356",
+        "restrictions": [
+          {
+            "key": "9300605567124626807"
+          }
+        ]
+      }
     }
+  ],
+  "pagination": {
+    "pageNumber": 1,
+    "pageSize": 10
+  }
 }
 //}
 
@@ -477,7 +523,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 echo 'TxHash' . PHP_EOL;
 echo $facade->hashTransaction($tx) . PHP_EOL;
@@ -505,7 +553,9 @@ try {
   $result = $apiInstance->announceTransaction($payload);
   echo $result . PHP_EOL;
 } catch (Exception $e) {
-  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling TransactionRoutesApi->announceTransaction: ',
+    . $e->getMessage(),
+    . PHP_EOL;
 }
 echo 'TxHash' . PHP_EOL;
 echo $facade->hashTransaction($tx) . PHP_EOL;
@@ -514,7 +564,12 @@ echo $facade->hashTransaction($tx) . PHP_EOL;
 失敗した場合以下のようなエラーステータスになります。
 
 //emlist[][js]{
-{"hash":"C7E0EAF9941D9030E055BE87F0F79805582CA1713680BA546837042EA3DEDBCD","code":"Failure_RestrictionMosaic_Account_Unauthorized","deadline":"54911200734","group":"failed"}
+{
+  "hash":"C7E0EAF9941D9030E055BE87F0F79805582CA1713680BA546837042EA3DEDBCD",
+  "code":"Failure_RestrictionMosaic_Account_Unauthorized",
+  "deadline":"54911200734",
+  "group":"failed"
+}
 //}
 
 == 11.3 現場で使えるヒント
