@@ -1,4 +1,4 @@
-= 12.オフライン署名
+= オフライン署名
 
 ロック機構の章で、アナウンスしたトランザクションをハッシュ値指定でロックして、複数の署名（オンライン署名）を集めるアグリゲートトランザクションを紹介しました。この章では、トランザクションを事前に署名を集めてノードにアナウンスするオフライン署名について説明します。
 
@@ -6,7 +6,7 @@
 
 Aliceが起案者となりトランザクションを作成し、署名します。次にBobが署名してAliceに返します。最後にAliceがトランザクションを結合してネットワークにアナウンスします。
 
-== 12.1 トランザクション作成
+== トランザクション作成
 
 //emlist[][php]{
 $bobPrivateKey = 'B34C8DEEADF5FE608CB2FD245C9ECF8A70DAD7F7E66CB22614BAF90E******';
@@ -68,7 +68,7 @@ BECAF0280396BED005000000000000005C30747832000000"
 
 署名を行い、signedHash,signedPayloadを出力します。signedPayloadをBobに渡して署名を促します。
 
-== 12.2 Bobによる連署
+== Bobによる連署
 
 Aliceから受け取ったsignedPayloadでトランザクションを復元します。
 
@@ -253,7 +253,7 @@ $bobSignedTxSignerPublicKey = $bobCosignature->signerPublicKey;
 
 CosignatureTransactionで署名を行い、bobSignedTxSignature,bobSignedTxSignerPublicKeyを出力しAliceに返却します。Bobが全ての署名を揃えられる場合は、Aliceに返却しなくてもBobがアナウンスすることも可能です。
 
-== 12.3 Aliceによるアナウンス
+== Aliceによるアナウンス
 
 AliceはBobからbobSignedTxSignature,bobSignedTxSignerPublicKeyを受け取ります。また事前にAlice自身で作成したsignedPayloadを用意します。
 
@@ -282,7 +282,7 @@ try {
 }
 //}
 
-== 12.4 現場で使えるヒント
+== 現場で使えるヒント
 
 === マーケットプレイスレス
 
