@@ -72,7 +72,7 @@ restrictionFlags は v2 の AddressRestrictionFlag に相当します。 Address
 
 //beginchild
 
- * symbolSdk.symbol.AccountRestrictionFlags.ADDRESS + symbolSdk.symbol.AccountRestrictionFlags.OUTGOING
+ * symbolSdk.symbol.AccountRestrictionFlags.ADDRESS + @<br>{}symbolSdk.symbol.AccountRestrictionFlags.OUTGOING
 
 //endchild
 
@@ -80,7 +80,7 @@ restrictionFlags は v2 の AddressRestrictionFlag に相当します。 Address
 
 //beginchild
 
- * symbolSdk.symbol.AccountRestrictionFlags.ADDRESS + symbolSdk.symbol.AccountRestrictionFlags.BLOCK
+ * symbolSdk.symbol.AccountRestrictionFlags.ADDRESS + @<br>{}symbolSdk.symbol.AccountRestrictionFlags.BLOCK
 
 //endchild
 
@@ -88,7 +88,7 @@ restrictionFlags は v2 の AddressRestrictionFlag に相当します。 Address
 
 //beginchild
 
- * symbolSdk.symbol.AccountRestrictionFlags.ADDRESS + symbolSdk.symbol.AccountRestrictionFlags.BLOCK + symbolSdk.symbol.AccountRestrictionFlags.OUTGOING
+ * symbolSdk.symbol.AccountRestrictionFlags.ADDRESS + @<br>{}symbolSdk.symbol.AccountRestrictionFlags.BLOCK + @<br>{}symbolSdk.symbol.AccountRestrictionFlags.OUTGOING
 
 //endchild
 
@@ -135,7 +135,7 @@ try {
 
 //endchild
 
- * BlockMosaic：指定モザイクを含むトランザクションを受信拒否-symbolSdk.symbol.AccountRestrictionFlags.MOSAIC_ID + symbolSdk.symbol.AccountRestrictionFlags.BLOCKモザイク送信の制限機能はありません。また、後述するモザイクのふるまいを制限するグローバルモザイク制限と混同しないようにご注意ください。
+ * BlockMosaic：指定モザイクを含むトランザクションを受信拒否-@<br>{}symbolSdk.symbol.AccountRestrictionFlags.MOSAIC_ID + @<br>{}symbolSdk.symbol.AccountRestrictionFlags.BLOCK@<br>{}モザイク送信の制限機能はありません。また、後述するモザイクのふるまいを制限するグローバルモザイク制限と混同しないようにご注意ください。
 
 === 指定トランザクションの送信制限
 
@@ -176,12 +176,12 @@ try {
 
 //beginchild
 
- * symbolSdk.symbol.AccountRestrictionFlags.TRANSACTION_TYPE + symbolSdk.symbol.AccountRestrictionFlags.OUTGOING
+ * symbolSdk.symbol.AccountRestrictionFlags.TRANSACTION_TYPE + @<br>{}symbolSdk.symbol.AccountRestrictionFlags.OUTGOING
 
 //endchild
 
  * BlockOutgoingTransactionType：指定トランザクションの送信を禁止
- * symbolSdk.symbol.AccountRestrictionFlags.TRANSACTION_TYPE + symbolSdk.symbol.AccountRestrictionFlags.OUTGOING + symbolSdk.symbol.AccountRestrictionFlags.BLOCK
+ * symbolSdk.symbol.AccountRestrictionFlags.TRANSACTION_TYPE + @<br>{}symbolSdk.symbol.AccountRestrictionFlags.OUTGOING + @<br>{}symbolSdk.symbol.AccountRestrictionFlags.BLOCK
 
 トランザクション受信の制限機能はありません。指定できるオペレーションは以下の通りです。
 
